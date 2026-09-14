@@ -3,7 +3,7 @@ const path = require('path');
 
 const DB_FILE = path.join(__dirname, 'data.json');
 
-// Default dataset containing 20 curated products across AI SaaS, Smart Home & Fitness
+// Default dataset with user's official Amazon Tag ID: smartstack-20
 const defaultProducts = [
   {
     id: 'prod-1',
@@ -49,7 +49,7 @@ const defaultProducts = [
     originalPrice: '$159.99',
     discount: '19% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B07GJBBGH8?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B07GJBBGH8?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&auto=format&fit=crop&q=80',
     pros: ['16 Million Colors & HomeKit/Alexa integration', 'Reliable Zigbee Bridge connection', 'Automated schedules & geofencing'],
     cons: ['Bridge hub required'],
@@ -66,7 +66,7 @@ const defaultProducts = [
     originalPrice: '$349.00',
     discount: '14% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B0B5FLR49M?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B0B5FLR49M?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1576243345690-4e4b79b63284?w=600&auto=format&fit=crop&q=80',
     pros: ['Discreet titanium ring design', 'Industry-leading sleep stage & readiness analysis', '7-day battery life'],
     cons: ['Sizing kit recommended first'],
@@ -100,7 +100,7 @@ const defaultProducts = [
     originalPrice: '$249.99',
     discount: '20% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B086Q54K53?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B086Q54K53?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80',
     pros: ['1536p HD Head-to-Toe Video', '3D Motion Radar', 'Two-Way Talk with Audio+'],
     cons: ['Hardwired installation required'],
@@ -117,7 +117,7 @@ const defaultProducts = [
     originalPrice: '$599.00',
     discount: '17% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B0B5FLR99X?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B0B5FLR99X?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80',
     pros: ['QuietForce QF150 motor with 60 lbs stall force', 'OLED screen guided routines', '6 attachments included'],
     cons: ['Premium price point'],
@@ -151,7 +151,7 @@ const defaultProducts = [
     originalPrice: '$249.99',
     discount: '12% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B09XXS9GFT?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B09XXS9GFT?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=600&auto=format&fit=crop&q=80',
     pros: ['Saves up to 26% on annual heating & cooling costs', 'Built-in Siri & Alexa voice control', 'Included SmartSensor for room temp balancing'],
     cons: ['C-wire power adapter needed for older homes'],
@@ -185,7 +185,7 @@ const defaultProducts = [
     originalPrice: '$899.99',
     discount: '11% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B0C3MBX4D8?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B0C3MBX4D8?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80',
     pros: ['Solar charging lens extends battery up to 37 days', 'Built-in LED flashlight', 'Multi-band GPS tracking'],
     cons: ['Rugged design is bulkier on smaller wrists'],
@@ -202,7 +202,7 @@ const defaultProducts = [
     originalPrice: '$279.00',
     discount: '11% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B0BV7J3M3F?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B0BV7J3M3F?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&auto=format&fit=crop&q=80',
     pros: ['Next-gen acoustics with stereo separation', 'Bluetooth 5.0 and Wi-Fi streaming', 'Trueplay acoustic tuning'],
     cons: ['Sonos app needed for setup'],
@@ -236,7 +236,7 @@ const defaultProducts = [
     originalPrice: '$799.99',
     discount: '25% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B09C48YJ8R?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B09C48YJ8R?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1589923188900-85dae523342b?w=600&auto=format&fit=crop&q=80',
     pros: ['PrecisionVision AI obstacle avoidance', 'Self-emptying base holds 60 days of dirt', 'Imprint Smart Mapping'],
     cons: ['Higher investment cost'],
@@ -253,7 +253,7 @@ const defaultProducts = [
     originalPrice: '$299.00',
     discount: '20% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B09LH23JKS?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B09LH23JKS?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1510017803434-a899398421b3?w=600&auto=format&fit=crop&q=80',
     pros: ['Screenless distraction-free health tracker', 'Strain vs Recovery score optimization', 'Waterproof battery pack'],
     cons: ['Membership subscription required'],
@@ -287,7 +287,7 @@ const defaultProducts = [
     originalPrice: '$229.99',
     discount: '13% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B09KRZ9CXP?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B09KRZ9CXP?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop&q=80',
     pros: ['Backlit modular smart light bars', 'Rhythm music sync visualizer', 'Screen mirror technology'],
     cons: ['Double-sided tape setup required'],
@@ -304,7 +304,7 @@ const defaultProducts = [
     originalPrice: '$399.00',
     discount: '18% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B09JGGXB8H?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B09JGGXB8H?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&auto=format&fit=crop&q=80',
     pros: ['90W high-torque motor with 5 speeds', 'Patented pressure sensor technology', 'Hyperice App Bluetooth sync'],
     cons: ['Heavier than portable mini guns'],
@@ -321,7 +321,7 @@ const defaultProducts = [
     originalPrice: '$849.00',
     discount: '6% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B0CHX5R341?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B0CHX5R341?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=80',
     pros: ['3,000 nits brightest display', 'Titanium case with 100m water resistance', 'Dual-frequency precision GPS'],
     cons: ['Designed primarily for iPhone users'],
@@ -338,7 +338,7 @@ const defaultProducts = [
     originalPrice: '$429.00',
     discount: '12% OFF',
     affiliateNetwork: 'Amazon Associates',
-    affiliateUrl: 'https://www.amazon.in/dp/B0CCZ26B5V?tag=smartstack-21',
+    affiliateUrl: 'https://www.amazon.com/dp/B0CCZ26B5V?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80',
     pros: ['World-class noise cancellation', 'Immersive Spatial Audio mode', '24-hour battery life'],
     cons: ['Carrying case takes space in bags'],
@@ -417,7 +417,7 @@ We put the Hue ecosystem through a rigorous 6-month hands-on test. Here is our h
 
 ![Philips Hue Lighting](https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80)
 
-[👉 Check Lowest Amazon Price & Available Deals](https://www.amazon.in/dp/B07GJBBGH8?tag=smartstack-21)
+[👉 Check Lowest Amazon Price & Available Deals](https://www.amazon.com/dp/B07GJBBGH8?tag=smartstack-20)
 `,
     status: 'published',
     publishedAt: '2026-09-13T14:30:00.000Z',
@@ -465,7 +465,7 @@ Wearable fitness trackers are great, but heavy smartwatches can be uncomfortable
 
 ![Oura Ring Gen 3](https://images.unsplash.com/photo-1576243345690-4e4b79b63284?w=800&auto=format&fit=crop&q=80)
 
-[👉 Check Current Oura Ring Pricing on Amazon](https://www.amazon.in/dp/B0B5FLR49M?tag=smartstack-21)
+[👉 Check Current Oura Ring Pricing on Amazon](https://www.amazon.com/dp/B0B5FLR49M?tag=smartstack-20)
 `,
     status: 'published',
     publishedAt: '2026-09-12T11:00:00.000Z',
@@ -513,7 +513,7 @@ For outdoor explorers and endurance athletes, consumer smartwatches don't cut it
 
 ![Garmin Fenix 7 Pro](https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80)
 
-[👉 View Garmin Fenix 7 Pro Deals on Amazon](https://www.amazon.in/dp/B0C3MBX4D8?tag=smartstack-21)
+[👉 View Garmin Fenix 7 Pro Deals on Amazon](https://www.amazon.com/dp/B0C3MBX4D8?tag=smartstack-20)
 `,
     status: 'published',
     publishedAt: '2026-09-11T09:00:00.000Z',
@@ -524,7 +524,7 @@ For outdoor explorers and endurance athletes, consumer smartwatches don't cut it
 
 const defaultData = {
   settings: {
-    amazonTag: 'smartstack-21',
+    amazonTag: 'smartstack-20',
     partnerStackId: 'partner-saas-ref',
     clickbankId: 'affiliate123',
     adminPin: 'admin123',
@@ -560,7 +560,7 @@ function initDb() {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
-  // Always ensure fresh 20 products and articles exist
+  // Write default state with user's official Amazon Tag ID: smartstack-20
   fs.writeFileSync(DB_FILE, JSON.stringify(defaultData, null, 2), 'utf8');
 }
 

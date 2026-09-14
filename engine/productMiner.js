@@ -1,6 +1,6 @@
 const db = require('../database/db');
 
-// Expanded pool of 20 high-ticket affiliate products
+// Expanded pool of 20 high-ticket affiliate products with default Store Tag ID: smartstack-20
 const productPool = {
   'AI & SaaS Tools': [
     {
@@ -118,7 +118,7 @@ const productPool = {
       originalPrice: '$159.99',
       discount: '19% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B07GJBBGH8',
+      baseUrl: 'https://www.amazon.com/dp/B07GJBBGH8',
       imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&auto=format&fit=crop&q=80',
       pros: ['16 Million Colors & HomeKit/Alexa integration', 'Reliable Zigbee Bridge connection', 'Automated schedules & geofencing'],
       cons: ['Bridge hub required'],
@@ -133,7 +133,7 @@ const productPool = {
       originalPrice: '$249.99',
       discount: '20% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B086Q54K53',
+      baseUrl: 'https://www.amazon.com/dp/B086Q54K53',
       imageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80',
       pros: ['1536p HD Head-to-Toe Video', '3D Motion Detection & Bird\'s Eye View', 'Two-Way Talk with Audio+'],
       cons: ['Hardwired installation required'],
@@ -148,7 +148,7 @@ const productPool = {
       originalPrice: '$249.99',
       discount: '12% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B09XXS9GFT',
+      baseUrl: 'https://www.amazon.com/dp/B09XXS9GFT',
       imageUrl: 'https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=600&auto=format&fit=crop&q=80',
       pros: ['Saves up to 26% on annual heating & cooling costs', 'Built-in Siri & Alexa voice control', 'Included SmartSensor for room temp balancing'],
       cons: ['C-wire power adapter needed for older homes'],
@@ -163,7 +163,7 @@ const productPool = {
       originalPrice: '$279.00',
       discount: '11% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B0BV7J3M3F',
+      baseUrl: 'https://www.amazon.com/dp/B0BV7J3M3F',
       imageUrl: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&auto=format&fit=crop&q=80',
       pros: ['Next-gen acoustics with stereo separation', 'Bluetooth 5.0 and Wi-Fi streaming', 'Trueplay acoustic tuning'],
       cons: ['Sonos app needed for setup'],
@@ -178,7 +178,7 @@ const productPool = {
       originalPrice: '$799.99',
       discount: '25% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B09C48YJ8R',
+      baseUrl: 'https://www.amazon.com/dp/B09C48YJ8R',
       imageUrl: 'https://images.unsplash.com/photo-1589923188900-85dae523342b?w=600&auto=format&fit=crop&q=80',
       pros: ['PrecisionVision AI obstacle avoidance', 'Self-emptying base holds 60 days of dirt', 'Imprint Smart Mapping'],
       cons: ['Higher investment cost'],
@@ -193,7 +193,7 @@ const productPool = {
       originalPrice: '$229.99',
       discount: '13% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B09KRZ9CXP',
+      baseUrl: 'https://www.amazon.com/dp/B09KRZ9CXP',
       imageUrl: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop&q=80',
       pros: ['Backlit modular smart light bars', 'Rhythm music sync visualizer', 'Screen mirror technology'],
       cons: ['Double-sided tape setup required'],
@@ -210,7 +210,7 @@ const productPool = {
       originalPrice: '$349.00',
       discount: '14% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B0B5FLR49M',
+      baseUrl: 'https://www.amazon.com/dp/B0B5FLR49M',
       imageUrl: 'https://images.unsplash.com/photo-1576243345690-4e4b79b63284?w=600&auto=format&fit=crop&q=80',
       pros: ['Discreet titanium ring design', 'Industry-leading sleep stage & readiness analysis', '7-day battery life'],
       cons: ['Sizing kit recommended first'],
@@ -225,9 +225,9 @@ const productPool = {
       originalPrice: '$599.00',
       discount: '17% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B0B5FLR99X',
+      baseUrl: 'https://www.amazon.com/dp/B0B5FLR99X',
       imageUrl: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80',
-      pros: ['QuietForce QF150 motor with 60 lbs stall force', 'OLED screen with built-in routine guides', '6 attachments included'],
+      pros: ['QuietForce QF150 motor with 60 lbs stall force', 'OLED screen guided routines', '6 attachments included'],
       cons: ['Premium price point'],
       description: 'Professional-grade deep tissue percussive therapy device for athletic muscle recovery.',
       keyFeatures: ['60 lbs Stall Force', 'OLED Guided Routines', 'Bluetooth App Control', 'Swappable Battery']
@@ -240,7 +240,7 @@ const productPool = {
       originalPrice: '$899.99',
       discount: '11% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B0C3MBX4D8',
+      baseUrl: 'https://www.amazon.com/dp/B0C3MBX4D8',
       imageUrl: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80',
       pros: ['Solar charging lens extends battery up to 37 days', 'Built-in LED flashlight', 'Multi-band GPS tracking'],
       cons: ['Rugged design is bulkier on smaller wrists'],
@@ -255,7 +255,7 @@ const productPool = {
       originalPrice: '$299.00',
       discount: '20% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B09LH23JKS',
+      baseUrl: 'https://www.amazon.com/dp/B09LH23JKS',
       imageUrl: 'https://images.unsplash.com/photo-1510017803434-a899398421b3?w=600&auto=format&fit=crop&q=80',
       pros: ['Screenless distraction-free health tracker', 'Strain vs Recovery score optimization', 'Waterproof battery pack'],
       cons: ['Membership subscription required'],
@@ -270,7 +270,7 @@ const productPool = {
       originalPrice: '$399.00',
       discount: '18% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B09JGGXB8H',
+      baseUrl: 'https://www.amazon.com/dp/B09JGGXB8H',
       imageUrl: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&auto=format&fit=crop&q=80',
       pros: ['90W high-torque motor with 5 speeds', 'Patented pressure sensor technology', 'Hyperice App Bluetooth sync'],
       cons: ['Heavier than portable mini guns'],
@@ -285,7 +285,7 @@ const productPool = {
       originalPrice: '$849.00',
       discount: '6% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B0CHX5R341',
+      baseUrl: 'https://www.amazon.com/dp/B0CHX5R341',
       imageUrl: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=80',
       pros: ['3,000 nits brightest display', 'Titanium case with 100m water resistance', 'Dual-frequency precision GPS'],
       cons: ['Designed primarily for iPhone users'],
@@ -300,7 +300,7 @@ const productPool = {
       originalPrice: '$429.00',
       discount: '12% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.in/dp/B0CCZ26B5V',
+      baseUrl: 'https://www.amazon.com/dp/B0CCZ26B5V',
       imageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80',
       pros: ['World-class noise cancellation', 'Immersive Spatial Audio mode', '24-hour battery life'],
       cons: ['Carrying case takes space in bags'],
@@ -321,7 +321,7 @@ async function mineNewProduct(niche) {
   
   let finalAffiliateUrl = targetProduct.baseUrl;
   if (targetProduct.affiliateNetwork === 'Amazon Associates') {
-    const tag = settings.amazonTag || 'smartstack-21';
+    const tag = settings.amazonTag || 'smartstack-20';
     finalAffiliateUrl = `${targetProduct.baseUrl}?tag=${tag}`;
   } else if (targetProduct.affiliateNetwork === 'PartnerStack') {
     const pId = settings.partnerStackId || 'partner-saas-ref';

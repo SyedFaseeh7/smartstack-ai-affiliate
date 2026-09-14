@@ -14,6 +14,12 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+
+// Obscured Admin Route Security Isolation
+app.get('/admin', (req, res) => {
+  res.status(404).send('404 Page Not Found');
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 marked.setOptions({
