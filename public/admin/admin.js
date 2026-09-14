@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const res = await fetch('/api/automation/trigger', { method: 'POST' });
       const data = await res.json();
       showNotification('✅ Autonomous AI Cycle Completed! New article generated.');
-      loadAnalytics();
-      loadArticles();
-      loadProducts();
+      await loadAnalytics();
+      await loadArticles();
+      await loadProducts();
     } catch (err) {
       alert('Error running AI cycle: ' + err.message);
     } finally {
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btnMine) {
     btnMine.addEventListener('click', async () => {
       btnMine.disabled = true;
+      btnMine.innerHTML = '<span>⏳</span> Mining Product...';
       try {
         const res = await fetch('/api/products/mine', {
           method: 'POST',
@@ -48,12 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         const data = await res.json();
         showNotification(`✅ Product mined: ${data.product.name}`);
-        loadProducts();
-        loadAnalytics();
+        await loadProducts();
+        await loadAnalytics();
       } catch (err) {
         alert('Mining failed: ' + err.message);
       } finally {
         btnMine.disabled = false;
+        btnMine.innerHTML = '<span>⛏️</span> Mine New Product';
       }
     });
   }
@@ -63,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btnGenerate) {
     btnGenerate.addEventListener('click', async () => {
       btnGenerate.disabled = true;
+      btnGenerate.innerHTML = '<span>⏳</span> Writing Article...';
       try {
         const res = await fetch('/api/articles/generate', {
           method: 'POST',
@@ -70,13 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify({ articleType: 'Product Review' })
         });
         const data = await res.json();
-        showNotification(`✅ Article generated: "${data.article.title}"`);
-        loadArticles();
-        loadAnalytics();
+        showNotification(`✅ Article published: "${data.article.title.slice(0, 30)}..."`);
+        await loadArticles();
+        await loadAnalytics();
       } catch (err) {
         alert('Generation failed: ' + err.message);
       } finally {
         btnGenerate.disabled = false;
+        btnGenerate.innerHTML = '<span>✨</span> Generate New Review';
       }
     });
   }
@@ -104,7 +108,6 @@ function initAuth() {
   const overlay = document.getElementById('authOverlay');
   const errorDiv = document.getElementById('authError');
 
-  // Check if session already authenticated
   if (sessionStorage.getItem('smartstack_admin_auth') === 'true') {
     overlay.style.display = 'none';
     return;
@@ -244,9 +247,16 @@ async function loadProducts() {
     const products = await res.json();
 
     const tbody = document.getElementById('productsTableBody');
+    const fallbackImg = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80';
+
     tbody.innerHTML = products.map(p => `
       <tr>
-        <td><strong>${p.name}</strong></td>
+        <td>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="${p.imageUrl}" alt="${p.name}" style="width: 36px; height: 36px; border-radius: 6px; object-fit: cover;" onerror="this.onerror=null;this.src='${fallbackImg}';">
+            <strong>${p.name}</strong>
+          </div>
+        </td>
         <td>${p.niche}</td>
         <td><strong style="color: var(--admin-green);">${p.price}</strong></td>
         <td>${p.affiliateNetwork}</td>

@@ -16,7 +16,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Configure Marked for secure HTML rendering
 marked.setOptions({
   gfm: true,
   breaks: true
@@ -24,13 +23,11 @@ marked.setOptions({
 
 // --- REST API ENDPOINTS ---
 
-// Analytics & Overview
 app.get('/api/analytics', (req, res) => {
   const data = db.getAnalytics();
   res.json(data);
 });
 
-// Products
 app.get('/api/products', (req, res) => {
   const products = db.getProducts();
   res.json(products);
@@ -46,7 +43,6 @@ app.post('/api/products/mine', async (req, res) => {
   }
 });
 
-// Articles
 app.get('/api/articles', (req, res) => {
   const { niche, category } = req.query;
   let articles = db.getArticles();
@@ -69,13 +65,8 @@ app.get('/api/articles/:slug', (req, res) => {
     return res.status(404).json({ error: 'Article not found' });
   }
 
-  // Increment view counter
   db.incrementArticleViews(article.id);
-
-  // Render markdown content to HTML
   const renderedHtml = marked(article.content);
-  
-  // Find associated product
   const products = db.getProducts();
   const product = products.find(p => p.id === article.productId) || products[0];
 
@@ -103,7 +94,6 @@ app.post('/api/articles/generate', async (req, res) => {
   }
 });
 
-// Click Tracking & Affiliate Link Redirection
 app.get('/api/track-click', (req, res) => {
   const { articleId, productId, network, targetUrl, subId } = req.query;
 
@@ -116,14 +106,12 @@ app.get('/api/track-click', (req, res) => {
       userAgent: req.headers['user-agent']
     });
 
-    // Clean redirection to affiliate destination
     return res.redirect(decodeURIComponent(targetUrl));
   }
 
   res.status(400).json({ error: 'Missing targetUrl parameter' });
 });
 
-// Admin Passcode Authentication Verification
 app.post('/api/admin/auth', (req, res) => {
   const { pin } = req.body;
   const settings = db.getSettings();
@@ -135,7 +123,6 @@ app.post('/api/admin/auth', (req, res) => {
   res.status(401).json({ success: false, error: 'Invalid Secret Passcode' });
 });
 
-// Settings & Credentials Management
 app.get('/api/settings', (req, res) => {
   const settings = db.getSettings();
   res.json(settings);
@@ -146,7 +133,6 @@ app.post('/api/settings', (req, res) => {
   res.json({ success: true, settings: newSettings });
 });
 
-// Trigger Manual Autonomous Cycle
 app.post('/api/automation/trigger', async (req, res) => {
   try {
     await runAutonomousCycle();
@@ -157,7 +143,6 @@ app.post('/api/automation/trigger', async (req, res) => {
   }
 });
 
-// SEO & Feeds
 app.get('/sitemap.xml', (req, res) => {
   const host = `${req.protocol}://${req.get('host')}`;
   const xml = generateSitemap(host);
@@ -172,13 +157,16 @@ app.get('/feed.xml', (req, res) => {
   res.send(xml);
 });
 
-// --- SECRET ENCRYPTED ADMIN ROUTE ---
-// Secret URL: /smartstack-control-panel-x99
+// Standalone About Us page
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'about.html'));
+});
+
+// Secret Admin Route
 app.get('/smartstack-control-panel-x99', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin', 'index.html'));
 });
 
-// Hide standard /admin route (returns 404 to deceive unauthorized scanners)
 app.get('/admin', (req, res) => {
   res.status(404).send('404 Page Not Found');
 });
@@ -191,7 +179,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Initialize background scheduler
 initScheduler();
 
 app.listen(PORT, () => {

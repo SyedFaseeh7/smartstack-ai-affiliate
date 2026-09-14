@@ -43,13 +43,14 @@ function renderArticles() {
     return;
   }
 
+  const fallbackImg = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80';
+
   grid.innerHTML = filtered.map(art => {
-    // Extract thumbnail or default image
     const thumbnail = extractThumbnail(art);
 
     return `
       <article class="article-card">
-        <img src="${thumbnail}" alt="${art.title}" class="card-image" loading="lazy">
+        <img src="${thumbnail}" alt="${art.title}" class="card-image" loading="lazy" onerror="this.onerror=null;this.src='${fallbackImg}';">
         <div class="card-body">
           <div class="card-meta">
             <span class="tag-badge">${art.category || art.niche}</span>
@@ -72,7 +73,6 @@ function renderArticles() {
 }
 
 function extractThumbnail(art) {
-  // Try extracting image from article markdown or use curated default based on niche
   const imgMatch = art.content ? art.content.match(/!\[.*?\]\((.*?)\)/) : null;
   if (imgMatch && imgMatch[1]) {
     return imgMatch[1];
@@ -86,11 +86,9 @@ function extractThumbnail(art) {
   return 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80';
 }
 
-// Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
   fetchArticles();
 
-  // Category Pills
   const pills = document.querySelectorAll('#categoryPills .pill');
   pills.forEach(pill => {
     pill.addEventListener('click', (e) => {
@@ -101,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Search Bar
   const searchInput = document.getElementById('searchInput');
   if (searchInput) {
     searchInput.addEventListener('input', renderArticles);
