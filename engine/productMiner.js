@@ -1,331 +1,180 @@
 const db = require('../database/db');
 
-// Expanded pool of 20 high-ticket affiliate products with default Store Tag ID: smartstack-20
+// Product Pool focused 100% on Amazon Products & Amazon Bounty Programs
 const productPool = {
-  'AI & SaaS Tools': [
+  'Amazon Devices & Smarthome': [
     {
-      name: 'Synthesia AI Video Generator',
-      category: 'Video & Media',
-      rating: 4.8,
-      price: '$22/mo',
-      originalPrice: '$30/mo',
-      discount: '26% OFF',
-      affiliateNetwork: 'PartnerStack',
-      baseUrl: 'https://partnerstack.com/ref/synthesia-demo',
-      imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80',
-      pros: ['Generates realistic AI avatars in 120+ languages', 'No camera or microphone needed', 'Templates for marketing & training videos'],
-      cons: ['Advanced voice cloning requires Pro plan'],
-      description: 'Create professional AI videos from text in minutes without cameras or actors.',
-      keyFeatures: ['120+ AI Avatars', 'Text-to-Video Engine', 'Custom Avatars Support', 'Automated Subtitles']
-    },
-    {
-      name: 'Jasper AI Copywriter Pro',
-      category: 'Content & Copywriting',
-      rating: 4.9,
-      price: '$39/mo',
-      originalPrice: '$49/mo',
-      discount: '20% OFF',
-      affiliateNetwork: 'PartnerStack',
-      baseUrl: 'https://partnerstack.com/ref/jasper-ai-trial',
-      imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780efad99a?w=600&auto=format&fit=crop&q=80',
-      pros: ['50+ copywriting templates for ads & blogs', 'Integrated SEO Surfer optimization', 'Brand voice training'],
-      cons: ['Higher tier plans for team collaboration'],
-      description: 'The industry standard AI co-pilot for high-converting marketing copy and long-form articles.',
-      keyFeatures: ['Brand Voice Training', 'SEO Surfer Integration', 'Plagiarism Checker', '50+ Content Templates']
-    },
-    {
-      name: 'Descript AI Audio & Video Editor',
-      category: 'Media & Editing',
-      rating: 4.8,
-      price: '$12/mo',
-      originalPrice: '$15/mo',
-      discount: '20% OFF',
-      affiliateNetwork: 'PartnerStack',
-      baseUrl: 'https://partnerstack.com/ref/descript-ai',
-      imageUrl: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&auto=format&fit=crop&q=80',
-      pros: ['Edit audio/video by editing text script', 'Studio Sound AI noise remover', 'Overdub AI voice cloning'],
-      cons: ['Learning curve for multitrack timeline'],
-      description: 'The all-in-one podcast and video editing software powered by AI text editing.',
-      keyFeatures: ['Text-Based Video Editing', 'Studio Sound Enhancer', 'Filler Word Removal', 'Overdub Voice Clone']
-    },
-    {
-      name: 'Copy.ai Marketing Automation Platform',
-      category: 'Content & Sales',
+      name: 'Amazon Echo Dot (5th Gen) Smart Speaker',
+      category: 'Smart Speakers',
       rating: 4.7,
-      price: '$36/mo',
-      originalPrice: '$49/mo',
-      discount: '26% OFF',
-      affiliateNetwork: 'PartnerStack',
-      baseUrl: 'https://partnerstack.com/ref/copyai-growth',
-      imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80',
-      pros: ['Automates GTM sales workflows', '90+ copywriting tools', 'Team workspace sharing'],
-      cons: ['Fewer integrations than Enterprise tools'],
-      description: 'AI powered sales and content engine that writes blog posts, ad copies, and cold emails in seconds.',
-      keyFeatures: ['Sales Workflow Automation', 'Social Post Generator', 'Email Sequence Writer', 'Multi-Language Output']
-    },
-    {
-      name: 'Notion AI Workspace & Knowledge Base',
-      category: 'Productivity',
-      rating: 4.9,
-      price: '$8/mo',
-      originalPrice: '$10/mo',
-      discount: '20% OFF',
-      affiliateNetwork: 'PartnerStack',
-      baseUrl: 'https://partnerstack.com/ref/notion-ai',
-      imageUrl: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&auto=format&fit=crop&q=80',
-      pros: ['Instant document Q&A and auto-summaries', 'Integrated directly into Notion docs & tables', 'Translates content into 14 languages'],
-      cons: ['Requires existing Notion setup'],
-      description: 'Supercharge your notes, docs, and project management with built-in AI writing assistance.',
-      keyFeatures: ['Auto-Summarization', 'Action Item Extractor', 'Document Q&A', 'Translation Engine']
-    },
-    {
-      name: 'Surfer SEO Content Intelligence Platform',
-      category: 'SEO & Analytics',
-      rating: 4.9,
-      price: '$89/mo',
-      originalPrice: '$119/mo',
-      discount: '25% OFF',
-      affiliateNetwork: 'PartnerStack',
-      baseUrl: 'https://partnerstack.com/ref/surfer-seo',
-      imageUrl: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&auto=format&fit=crop&q=80',
-      pros: ['Real-time content score optimization', 'NLP keyword suggestion engine', 'SERP audit & competitor gap analysis'],
-      cons: ['Higher starting monthly investment'],
-      description: 'The premier SEO content optimization tool used by top publishers to rank #1 on Google.',
-      keyFeatures: ['Content Editor', 'SERP Analyzer', 'Keyword Surfer', 'Audit Generator']
-    },
-    {
-      name: 'InVideo AI Video Creator',
-      category: 'Video Production',
-      rating: 4.7,
-      price: '$25/mo',
-      originalPrice: '$35/mo',
-      discount: '28% OFF',
-      affiliateNetwork: 'PartnerStack',
-      baseUrl: 'https://partnerstack.com/ref/invideo-ai',
-      imageUrl: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?w=600&auto=format&fit=crop&q=80',
-      pros: ['Generates YouTube Shorts and TikToks from text prompts', 'Human sounding AI voiceovers', 'Stock video library included'],
-      cons: ['Export limit on free trial tier'],
-      description: 'Turn any prompt or script into a publish-ready YouTube Short or video ad automatically.',
-      keyFeatures: ['Prompt to Video Engine', '16:9 and 9:16 Formats', 'Voice Synthesis', 'Stock Media Library']
-    }
-  ],
-  'Smart Home & Tech': [
-    {
-      name: 'Philips Hue Smart Lighting Starter Kit',
-      category: 'Smart Lighting',
-      rating: 4.7,
-      price: '$129.99',
-      originalPrice: '$159.99',
-      discount: '19% OFF',
-      affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B07GJBBGH8',
-      imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&auto=format&fit=crop&q=80',
-      pros: ['16 Million Colors & HomeKit/Alexa integration', 'Reliable Zigbee Bridge connection', 'Automated schedules & geofencing'],
-      cons: ['Bridge hub required'],
-      description: 'Transform your home ambiance with voice-controlled million-color smart bulbs.',
-      keyFeatures: ['Voice Control (Alexa/Siri/Google)', 'Geofencing Auto Turn-On', '16 Million Color Options', 'Hue Bridge Included']
-    },
-    {
-      name: 'Ring Video Doorbell Pro 2',
-      category: 'Home Security',
-      rating: 4.7,
-      price: '$199.99',
-      originalPrice: '$249.99',
-      discount: '20% OFF',
-      affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B086Q54K53',
-      imageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80',
-      pros: ['1536p HD Head-to-Toe Video', '3D Motion Detection & Bird\'s Eye View', 'Two-Way Talk with Audio+'],
-      cons: ['Hardwired installation required'],
-      description: 'Premium wired video doorbell with head-to-toe video coverage and 3D radar motion detection.',
-      keyFeatures: ['1536p HD Video', '3D Motion Radar', 'Head-to-Toe View', 'Alexa Greeting Assistant']
-    },
-    {
-      name: 'Ecobee Smart Thermostat Premium',
-      category: 'Smart Climate',
-      rating: 4.8,
-      price: '$219.99',
-      originalPrice: '$249.99',
-      discount: '12% OFF',
-      affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B09XXS9GFT',
-      imageUrl: 'https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=600&auto=format&fit=crop&q=80',
-      pros: ['Saves up to 26% on annual heating & cooling costs', 'Built-in Siri & Alexa voice control', 'Included SmartSensor for room temp balancing'],
-      cons: ['C-wire power adapter needed for older homes'],
-      description: 'Save energy and control home climate with air quality monitoring and built-in voice assistants.',
-      keyFeatures: ['Air Quality Monitor', 'Included SmartSensor', 'Built-in Alexa/Siri', 'Energy Star Certified']
-    },
-    {
-      name: 'Sonos Era 100 Smart Speaker',
-      category: 'Smart Audio',
-      rating: 4.8,
-      price: '$249.00',
-      originalPrice: '$279.00',
-      discount: '11% OFF',
-      affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B0BV7J3M3F',
-      imageUrl: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&auto=format&fit=crop&q=80',
-      pros: ['Next-gen acoustics with stereo separation', 'Bluetooth 5.0 and Wi-Fi streaming', 'Trueplay acoustic tuning'],
-      cons: ['Sonos app needed for setup'],
-      description: 'Immersive acoustic smart speaker with rich room-filling bass and Alexa voice control.',
-      keyFeatures: ['Acoustic Trueplay Tuning', 'WiFi & Bluetooth', 'Sonos Ecosystem Sync', 'Touch Controls']
-    },
-    {
-      name: 'iRobot Roomba j7+ Robot Vacuum',
-      category: 'Smart Cleaning',
-      rating: 4.7,
-      price: '$599.99',
-      originalPrice: '$799.99',
-      discount: '25% OFF',
-      affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B09C48YJ8R',
-      imageUrl: 'https://images.unsplash.com/photo-1589923188900-85dae523342b?w=600&auto=format&fit=crop&q=80',
-      pros: ['PrecisionVision AI obstacle avoidance', 'Self-emptying base holds 60 days of dirt', 'Imprint Smart Mapping'],
-      cons: ['Higher investment cost'],
-      description: 'Smart robot vacuum that avoids pet cords, obstacles, and automatically empties its own bin.',
-      keyFeatures: ['AI Obstacle Avoidance', 'Automatic Dirt Disposal', 'Imprint Smart Map', 'Alexa Voice Start']
-    },
-    {
-      name: 'Nanoleaf Lines Smart RGB Bar Lights',
-      category: 'Smart Decor',
-      rating: 4.6,
-      price: '$199.99',
-      originalPrice: '$229.99',
-      discount: '13% OFF',
-      affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B09KRZ9CXP',
-      imageUrl: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop&q=80',
-      pros: ['Backlit modular smart light bars', 'Rhythm music sync visualizer', 'Screen mirror technology'],
-      cons: ['Double-sided tape setup required'],
-      description: 'Modular RGB light bars that project vibrant ambient lighting effects on your room walls.',
-      keyFeatures: ['Music Rhythm Visualizer', '16M+ Colors', 'Screen Mirroring', 'Thread/Matter Enabled']
-    }
-  ],
-  'Fitness & Wellness': [
-    {
-      name: 'Oura Ring Gen 3 Smart Health Tracker',
-      category: 'Wearables',
-      rating: 4.6,
-      price: '$299.00',
-      originalPrice: '$349.00',
-      discount: '14% OFF',
-      affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B0B5FLR49M',
-      imageUrl: 'https://images.unsplash.com/photo-1576243345690-4e4b79b63284?w=600&auto=format&fit=crop&q=80',
-      pros: ['Discreet titanium ring design', 'Industry-leading sleep stage & readiness analysis', '7-day battery life'],
-      cons: ['Sizing kit recommended first'],
-      description: 'Accurate 24/7 heart rate, sleep quality, and body temperature biometric monitoring in a sleek ring.',
-      keyFeatures: ['Sleep Readiness Score', 'Body Temp Sensing', 'Period Tracking', 'Ultra Light Titanium']
-    },
-    {
-      name: 'Theragun PRO G5 Percussive Massage Gun',
-      category: 'Recovery & Fitness',
-      rating: 4.9,
-      price: '$499.00',
-      originalPrice: '$599.00',
+      price: '$49.99',
+      originalPrice: '$59.99',
       discount: '17% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B0B5FLR99X',
-      imageUrl: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80',
-      pros: ['QuietForce QF150 motor with 60 lbs stall force', 'OLED screen guided routines', '6 attachments included'],
-      cons: ['Premium price point'],
-      description: 'Professional-grade deep tissue percussive therapy device for athletic muscle recovery.',
-      keyFeatures: ['60 lbs Stall Force', 'OLED Guided Routines', 'Bluetooth App Control', 'Swappable Battery']
+      baseUrl: 'https://www.amazon.com/dp/B09B8V1LZ3',
+      imageUrl: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&auto=format&fit=crop&q=80',
+      pros: ['Vibrant sound quality with deeper bass', 'Built-in Alexa voice assistant', 'Eero built-in WiFi extender support'],
+      cons: ['Power adapter required'],
+      description: 'Best-selling compact smart speaker with Alexa voice control and motion temperature sensors.',
+      keyFeatures: ['Alexa Voice Assistant', 'Built-in Eero WiFi Mesh', 'Temperature Sensor', 'Privacy Mic Off Button']
     },
     {
-      name: 'Garmin Fenix 7 Pro Solar Watch',
-      category: 'GPS Outdoor & Multisport',
-      rating: 4.9,
-      price: '$799.99',
-      originalPrice: '$899.99',
-      discount: '11% OFF',
-      affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B0C3MBX4D8',
-      imageUrl: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80',
-      pros: ['Solar charging lens extends battery up to 37 days', 'Built-in LED flashlight', 'Multi-band GPS tracking'],
-      cons: ['Rugged design is bulkier on smaller wrists'],
-      description: 'Ultimate multisport GPS smartwatch with solar charging, LED flashlight, and topo maps.',
-      keyFeatures: ['Solar Charging Lens', 'Integrated LED Flashlight', 'Multi-Band GPS', 'Hill Score & Stamina']
-    },
-    {
-      name: 'Whoop 4.0 Fitness Strap',
-      category: 'Biometric Wearables',
-      rating: 4.7,
-      price: '$239.00',
-      originalPrice: '$299.00',
-      discount: '20% OFF',
-      affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B09LH23JKS',
-      imageUrl: 'https://images.unsplash.com/photo-1510017803434-a899398421b3?w=600&auto=format&fit=crop&q=80',
-      pros: ['Screenless distraction-free health tracker', 'Strain vs Recovery score optimization', 'Waterproof battery pack'],
-      cons: ['Membership subscription required'],
-      description: 'Continuous 24/7 fitness tracker that optimizes sleep, strain, and recovery performance.',
-      keyFeatures: ['Strain Score Algorithm', 'Wireless On-Body Charging', 'Sleep Coach', 'Haptic Alarm']
-    },
-    {
-      name: 'Hyperice Hypervolt 2 Pro Massager',
-      category: 'Muscle Recovery',
+      name: 'Amazon Fire TV Stick 4K Max',
+      category: 'Streaming Media',
       rating: 4.8,
-      price: '$329.00',
-      originalPrice: '$399.00',
-      discount: '18% OFF',
+      price: '$59.99',
+      originalPrice: '$69.99',
+      discount: '14% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B09JGGXB8H',
-      imageUrl: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&auto=format&fit=crop&q=80',
-      pros: ['90W high-torque motor with 5 speeds', 'Patented pressure sensor technology', 'Hyperice App Bluetooth sync'],
-      cons: ['Heavier than portable mini guns'],
-      description: 'Heavy-duty percussive massage gun with 5 speed settings for serious athlete recovery.',
-      keyFeatures: ['90W High Torque Motor', 'Pressure Sensor LED', '5 Speed Dial', 'Bluetooth App Routines']
+      baseUrl: 'https://www.amazon.com/dp/B0BP9SNVH9',
+      imageUrl: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&auto=format&fit=crop&q=80',
+      pros: ['Ultra HD 4K streaming with Dolby Vision', 'WiFi 6E high-speed streaming', '16GB storage for games & apps'],
+      cons: ['HDMI port required on TV'],
+      description: 'Amazon’s most powerful streaming stick with Ambient Experience and WiFi 6E support.',
+      keyFeatures: ['4K Ultra HD & HDR10+', 'WiFi 6E Support', 'Alexa Voice Remote', '16GB Storage']
     },
     {
-      name: 'Apple Watch Ultra 2 GPS + Cellular',
-      category: 'Smartwatches',
+      name: 'Amazon Kindle Paperwhite (16 GB)',
+      category: 'E-Readers',
       rating: 4.9,
-      price: '$799.00',
-      originalPrice: '$849.00',
-      discount: '6% OFF',
-      affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B0CHX5R341',
-      imageUrl: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=80',
-      pros: ['3,000 nits brightest display', 'Titanium case with 100m water resistance', 'Dual-frequency precision GPS'],
-      cons: ['Designed primarily for iPhone users'],
-      description: 'The most capable Apple smartwatch built for endurance, outdoor exploration, and water sports.',
-      keyFeatures: ['Titanium Case', '3,000 Nits Display', 'Action Button', 'Dual-Frequency GPS']
-    },
-    {
-      name: 'Bose QuietComfort Ultra Headphones',
-      category: 'Audio Tech',
-      rating: 4.8,
-      price: '$379.00',
-      originalPrice: '$429.00',
+      price: '$149.99',
+      originalPrice: '$169.99',
       discount: '12% OFF',
       affiliateNetwork: 'Amazon Associates',
-      baseUrl: 'https://www.amazon.com/dp/B0CCZ26B5V',
+      baseUrl: 'https://www.amazon.com/dp/B09TMN58Y2',
+      imageUrl: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
+      pros: ['6.8" 300 ppi glare-free display reads like real paper', 'Adjustable warm light for night reading', 'Up to 10 weeks battery life'],
+      cons: ['Monochrome screen'],
+      description: 'Waterproof e-reader with glare-free screen, adjustable warm light, and weeks of battery life.',
+      keyFeatures: ['300 ppi Glare-Free Screen', 'IPX8 Waterproofing', '10 Weeks Battery Life', 'Adjustable Warm Light']
+    },
+    {
+      name: 'Blink Outdoor 4 Wireless HD Security Camera',
+      category: 'Home Security',
+      rating: 4.6,
+      price: '$89.99',
+      originalPrice: '$119.99',
+      discount: '25% OFF',
+      affiliateNetwork: 'Amazon Associates',
+      baseUrl: 'https://www.amazon.com/dp/B0B1N4NBDH',
+      imageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80',
+      pros: ['Two-year battery life on 2 AA lithium batteries', '1080p HD live view & infrared night vision', 'Enhanced motion detection'],
+      cons: ['Blink Sync Module required'],
+      description: 'Wire-free smart security camera with 2-year battery life and motion detection alerts.',
+      keyFeatures: ['2-Year Battery Life', '1080p HD Night Vision', 'Two-Way Audio', 'Weather Resistant']
+    }
+  ],
+  'Consumer Tech & Audio': [
+    {
+      name: 'Apple AirPods Pro (2nd Gen) Wireless Earbuds',
+      category: 'Headphones & Earbuds',
+      rating: 4.8,
+      price: '$199.99',
+      originalPrice: '$249.00',
+      discount: '20% OFF',
+      affiliateNetwork: 'Amazon Associates',
+      baseUrl: 'https://www.amazon.com/dp/B0CHWRXH8B',
+      imageUrl: 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=600&auto=format&fit=crop&q=80',
+      pros: ['Up to 2x more Active Noise Cancellation', 'Adaptive Audio & Transparency Mode', 'USB-C charging case with Precision Finding'],
+      cons: ['Best experienced with Apple iOS devices'],
+      description: 'Flagship noise-canceling earbuds with spatial audio, magsafe USB-C charging, and touch control.',
+      keyFeatures: ['Active Noise Cancellation', 'Adaptive Audio', 'USB-C MagSafe Case', '30 Hours Battery']
+    },
+    {
+      name: 'Anker Magnetic Wireless Power Bank 10,000mAh',
+      category: 'Mobile Accessories',
+      rating: 4.7,
+      price: '$44.99',
+      originalPrice: '$59.99',
+      discount: '25% OFF',
+      affiliateNetwork: 'Amazon Associates',
+      baseUrl: 'https://www.amazon.com/dp/B099F558MC',
+      imageUrl: 'https://images.unsplash.com/photo-1609592424083-d5d34208d132?w=600&auto=format&fit=crop&q=80',
+      pros: ['Snap-and-go MagSafe wireless charging', 'Foldable built-in phone kickstand', '10,000mAh high capacity'],
+      cons: ['MagSafe compatible phones required for magnetic snap'],
+      description: 'Portable magnetic battery pack with built-in stand for MagSafe iPhones and USB-C fast charging.',
+      keyFeatures: ['10,000mAh Capacity', 'Foldable Kickstand', 'MagSafe Compatible', 'USB-C 20W Fast Charge']
+    },
+    {
+      name: 'Sony WH-1000XM5 Wireless Headphones',
+      category: 'Headphones & Earbuds',
+      rating: 4.9,
+      price: '$348.00',
+      originalPrice: '$399.99',
+      discount: '13% OFF',
+      affiliateNetwork: 'Amazon Associates',
+      baseUrl: 'https://www.amazon.com/dp/B09XS7JWHH',
       imageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80',
-      pros: ['World-class noise cancellation', 'Immersive Spatial Audio mode', '24-hour battery life'],
-      cons: ['Carrying case takes space in bags'],
-      description: 'Flagship wireless headphones featuring breakthrough spatialized audio and world-class noise cancellation.',
-      keyFeatures: ['Immersive Audio', 'World-Class ANC', '24-Hour Battery', 'CustomTune Tech']
+      pros: ['Industry-leading noise canceling with 8 microphones', 'Ultra-comfortable lightweight design', '30-hour battery life with quick charging'],
+      cons: ['Non-folding headband earcups'],
+      description: 'Top-rated noise-canceling headphones with crystal-clear call quality and spatial sound.',
+      keyFeatures: ['8-Mic Noise Canceling', '30-Hour Battery', 'Auto NC Optimizer', 'Multipoint Connection']
+    },
+    {
+      name: 'Logitech MX Master 3S Wireless Performance Mouse',
+      category: 'Computer Gear',
+      rating: 4.9,
+      price: '$99.99',
+      originalPrice: '$109.99',
+      discount: '9% OFF',
+      affiliateNetwork: 'Amazon Associates',
+      baseUrl: 'https://www.amazon.com/dp/B09HM94VDS',
+      imageUrl: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80',
+      pros: ['8K DPI track-anywhere optical sensor', 'Quiet click switches reduce noise by 90%', 'MagSpeed electromagnetic scroll wheel'],
+      cons: ['Ergonomic right-hand design only'],
+      description: 'The iconic precision wireless mouse engineered for creators, coders, and power productivity users.',
+      keyFeatures: ['8K DPI Any-Surface Tracking', 'Quiet Clicks', 'MagSpeed Scroll', '70 Days Battery Life']
+    }
+  ],
+  'Bounties & Membership Deals': [
+    {
+      name: 'Amazon Prime for Young Adults (6-Month Trial)',
+      category: 'Amazon Bounty Program',
+      rating: 5.0,
+      price: 'FREE 6-Month Trial',
+      originalPrice: '$14.99/mo value',
+      discount: '$30 Signup Bonus Value',
+      affiliateNetwork: 'Amazon Bounty Program',
+      baseUrl: 'https://www.amazon.com/joinyoungadult',
+      imageUrl: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop&q=80',
+      pros: ['Free 6-Month trial for students & young adults (18-24)', 'Free 1-Day & Same-Day delivery', 'Includes Prime Video, Prime Music, & Grubhub+'],
+      cons: ['Requires verification of age (18-24) or student status'],
+      description: 'Get 6 months of Amazon Prime for FREE including free fast shipping, Prime Video streaming, and exclusive college deals.',
+      keyFeatures: ['6 Months FREE Prime', 'Free 1-Day Shipping', 'Prime Video & Music Included', 'Grubhub+ Free Food Delivery']
+    },
+    {
+      name: 'Audible Premium Plus 30-Day Free Trial',
+      category: 'Amazon Bounty Program',
+      rating: 4.9,
+      price: 'FREE 30-Day Trial',
+      originalPrice: '$14.95/mo',
+      discount: '2 FREE Audiobooks',
+      affiliateNetwork: 'Amazon Bounty Program',
+      baseUrl: 'https://www.amazon.com/hz/audible/mlp/membership/premiumplus',
+      imageUrl: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
+      pros: ['Includes 1 free credit for any premium audiobook', 'Unlimited listening to Audible Plus catalog', 'Keep your audiobooks forever'],
+      cons: ['Renews at $14.95/mo after 30 days if not canceled'],
+      description: 'Listen to thousands of audiobooks, podcasts, and Audible Originals free for 30 days.',
+      keyFeatures: ['1 Free Audiobook Credit', 'Audible Originals Access', 'Cancel Anytime', 'Listen on Any Device']
     }
   ]
 };
 
 async function mineNewProduct(niche) {
   const settings = db.getSettings();
-  const pool = productPool[niche] || productPool['AI & SaaS Tools'];
+  const pool = productPool[niche] || productPool['Amazon Devices & Smarthome'];
   
   const existingProducts = db.getProducts();
   const unmined = pool.filter(p => !existingProducts.some(ep => ep.name === p.name));
   
   const targetProduct = unmined.length > 0 ? unmined[0] : pool[Math.floor(Math.random() * pool.length)];
+  const tag = settings.amazonTag || 'smartstack-20';
   
   let finalAffiliateUrl = targetProduct.baseUrl;
-  if (targetProduct.affiliateNetwork === 'Amazon Associates') {
-    const tag = settings.amazonTag || 'smartstack-20';
+  if (finalAffiliateUrl.includes('?')) {
+    finalAffiliateUrl = `${targetProduct.baseUrl}&tag=${tag}`;
+  } else {
     finalAffiliateUrl = `${targetProduct.baseUrl}?tag=${tag}`;
-  } else if (targetProduct.affiliateNetwork === 'PartnerStack') {
-    const pId = settings.partnerStackId || 'partner-saas-ref';
-    finalAffiliateUrl = `${targetProduct.baseUrl}?ps_ref=${pId}`;
   }
 
   const newProduct = {
