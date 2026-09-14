@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Review & Buyer Guide | SmartStack AI</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <!-- FTC Disclosure Bar -->
+  <div class="ftc-banner">
+    <strong>FTC Disclosure:</strong> When you buy through links on our site, we may earn an affiliate commission at no extra cost to you.
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="/" class="brand">
+      <div class="brand-icon">⚡</div>
+      <span>SmartStack <span style="color: var(--primary);">AI</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="/" class="nav-link">← Back to All Reviews</a>
+      <a href="/#about" class="nav-link">About Us</a>
+    </nav>
+  </header>
+
+  <!-- Article View Container -->
+  <main class="article-container">
+    <div id="articleLoading" style="text-align: center; padding: 60px; color: var(--text-muted);">
+      <p>⏳ Loading In-Depth AI Review...</p>
+    </div>
+
+    <article id="articleMain" style="display: none;">
+      <header class="article-header">
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 14px; flex-wrap: wrap;">
+          <span class="tag-badge" id="articleCategory">BUYER GUIDE</span>
+          <span class="network-badge" id="articleNetwork">Verified Partner</span>
+          <span style="color: var(--text-dark); font-size: 0.8rem;" id="articleDate">Sept 2026</span>
+        </div>
+        <h1 class="article-title-main" id="articleTitle">Article Title</h1>
+      </header>
+
+      <div class="article-content" id="articleContent">
+        <!-- Rendered Markdown HTML inserted here -->
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 SmartStack AI. Independent Data-Driven Product Reviews.</p>
+  </footer>
+
+  <script>
+    async function loadArticle() {
+      const pathParts = window.location.pathname.split('/');
+      const slug = pathParts[pathParts.length - 1];
+
+      if (!slug) {
+        window.location.href = '/';
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/articles/' + slug);
+        if (!res.ok) {
+          document.getElementById('articleLoading').innerHTML = '<h2>Article not found</h2><p><a href="/">Return to home</a></p>';
+          return;
+        }
+
+        const data = await res.json();
+        
+        document.getElementById('pageTitle').innerText = data.title + ' | SmartStack AI';
+        document.getElementById('articleTitle').innerText = data.title;
+        document.getElementById('articleCategory').innerText = data.category || data.niche;
+        document.getElementById('articleNetwork').innerText = 'Network: ' + (data.affiliateNetwork || 'Partner');
+        document.getElementById('articleDate').innerText = 'Published: ' + new Date(data.publishedAt).toLocaleDateString();
+        
+        // Populate rendered markdown HTML
+        document.getElementById('articleContent').innerHTML = data.renderedHtml;
+
+        document.getElementById('articleLoading').style.display = 'none';
+        document.getElementById('articleMain').style.display = 'block';
+
+      } catch (err) {
+        console.error('Error loading article:', err);
+        document.getElementById('articleLoading').innerText = 'Failed to load article.';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadArticle);
+  </script>
+</body>
+</html>

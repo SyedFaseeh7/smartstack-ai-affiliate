@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control Panel | SmartStack AI</title>
+  <link rel="stylesheet" href="/admin/admin.css">
+  <style>
+    /* Security Login Overlay */
+    .auth-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(9, 13, 22, 0.96);
+      backdrop-filter: blur(20px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .auth-box {
+      background: rgba(17, 24, 39, 0.95);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 50px rgba(99, 102, 241, 0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Admin PIN Security Overlay -->
+  <div class="auth-overlay" id="authOverlay">
+    <div class="auth-box">
+      <div style="font-size: 2.5rem; margin-bottom: 12px;">🔒</div>
+      <h2 style="font-family: 'Outfit', sans-serif; margin-bottom: 8px;">Security Verification</h2>
+      <p style="font-size: 0.88rem; color: #9ca3af; margin-bottom: 25px;">Enter master PIN passcode to access SmartStack AI control panel.</p>
+      
+      <form id="formAuth">
+        <input type="password" id="authPinInput" class="form-control" placeholder="Enter Master PIN (Default: admin123)" style="text-align: center; font-size: 1.1rem; letter-spacing: 4px; margin-bottom: 16px;" required>
+        <button type="submit" class="btn-trigger" style="width: 100%; justify-content: center;">
+          🔓 Unlock Control Panel
+        </button>
+      </form>
+      <div id="authError" style="color: #f87171; font-size: 0.85rem; margin-top: 12px; display: none;"></div>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand-header">
+      <div class="brand-icon">⚡</div>
+      <span>SmartStack <span style="color: var(--admin-accent);">AI</span></span>
+    </div>
+
+    <nav class="nav-menu">
+      <div class="nav-item active" data-tab="tab-overview">
+        <span>📊</span> Overview & Analytics
+      </div>
+      <div class="nav-item" data-tab="tab-campaigns">
+        <span>🚀</span> Campaign Launcher
+      </div>
+      <div class="nav-item" data-tab="tab-content">
+        <span>🤖</span> AI Content Factory
+      </div>
+      <div class="nav-item" data-tab="tab-products">
+        <span>📦</span> Mined Product Catalog
+      </div>
+      <div class="nav-item" data-tab="tab-settings">
+        <span>🔑</span> Network Credentials
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="/" target="_blank" class="btn-public-site">
+        <span>🌐</span> View Public Review Site
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="main-content">
+    <!-- Top Header Bar -->
+    <header class="top-bar">
+      <div class="page-title">
+        <h1 id="tabTitle">Overview & Performance</h1>
+        <p id="tabSubtitle">Real-time tracking of AI automation, clicks, and affiliate earnings.</p>
+      </div>
+
+      <div class="top-actions">
+        <div class="auto-switch-container">
+          <span class="switch-label">Autonomous Mode</span>
+          <label class="switch">
+            <input type="checkbox" id="autonomousToggle" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <button class="btn-trigger" id="btnTriggerCycle">
+          <span>⚡</span> Trigger AI Cycle
+        </button>
+      </div>
+    </header>
+
+    <!-- Metrics Cards Bar -->
+    <section class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-header">
+          <span>ESTIMATED EARNINGS</span>
+          <span>💰</span>
+        </div>
+        <div class="metric-value" id="metricEarnings">$146.15</div>
+        <div class="metric-sub">↑ +18.4% from last week</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <span>TOTAL CLICK CONVERSIONS</span>
+          <span>🎯</span>
+        </div>
+        <div class="metric-value" id="metricClicks">79</div>
+        <div class="metric-sub">Avg $1.85 per click yield</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <span>PUBLISHED AI ARTICLES</span>
+          <span>📰</span>
+        </div>
+        <div class="metric-value" id="metricArticles">6</div>
+        <div class="metric-sub">100% SEO & FTC Compliant</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <span>MINED PRODUCTS</span>
+          <span>📦</span>
+        </div>
+        <div class="metric-value" id="metricProducts">6</div>
+        <div class="metric-sub">PartnerStack & Amazon</div>
+      </div>
+    </section>
+
+    <!-- TAB 1: OVERVIEW -->
+    <section class="tab-pane active" id="tab-overview">
+      <div class="panel-card">
+        <div class="panel-title">
+          <span>🔥 Active Niche Campaigns</span>
+          <span style="font-size: 0.85rem; color: var(--admin-green);">● Autonomous Scheduler Active</span>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Campaign Name</th>
+              <th>Target Niche</th>
+              <th>Target Keywords</th>
+              <th>Articles Generated</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="overviewCampaignsBody">
+            <!-- Injected via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-title">
+          <span>⚡ Recent Click & Referral Activity</span>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Click ID</th>
+              <th>Network</th>
+              <th>SubID Tag</th>
+              <th>Timestamp</th>
+            </tr>
+          </thead>
+          <tbody id="overviewClicksBody">
+            <!-- Injected via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 2: CAMPAIGN LAUNCHER -->
+    <section class="tab-pane" id="tab-campaigns">
+      <div class="panel-card">
+        <div class="panel-title">🚀 Launch New Niche Campaign</div>
+        <form id="formCampaign">
+          <div class="form-group">
+            <label class="form-label">Campaign Name</label>
+            <input type="text" id="campName" class="form-control" placeholder="e.g. Q4 High-Ticket AI Tools" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Target Niche</label>
+              <select id="campNiche" class="form-control">
+                <option value="AI & SaaS Tools">AI & SaaS Tools (Recurring 30-50%)</option>
+                <option value="Smart Home & Tech">Smart Home & Tech (Amazon 3-10%)</option>
+                <option value="Fitness & Wellness">Fitness & Wellness Tech</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Target Keywords (Comma Separated)</label>
+              <input type="text" id="campKeywords" class="form-control" placeholder="best ai video, top saas deals" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-trigger" style="margin-top: 10px;">
+            <span>🚀</span> Initialize Campaign
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- TAB 3: AI CONTENT FACTORY -->
+    <section class="tab-pane" id="tab-content">
+      <div class="panel-card">
+        <div class="panel-title">
+          <span>🤖 AI Generated Reviews & Buyer Guides</span>
+          <button class="btn-trigger" id="btnManualGenerate">
+            <span>✨</span> Generate New Review
+          </button>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Niche</th>
+              <th>Network</th>
+              <th>Views</th>
+              <th>Clicks</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="contentTableBody">
+            <!-- Injected via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 4: MINED PRODUCT CATALOG -->
+    <section class="tab-pane" id="tab-products">
+      <div class="panel-card">
+        <div class="panel-title">
+          <span>📦 Mined Affiliate Products</span>
+          <button class="btn-trigger" id="btnMineProduct">
+            <span>⛏️</span> Mine New Product
+          </button>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Niche</th>
+              <th>Price</th>
+              <th>Network</th>
+              <th>Affiliate URL</th>
+            </tr>
+          </thead>
+          <tbody id="productsTableBody">
+            <!-- Injected via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 5: NETWORK CREDENTIALS -->
+    <section class="tab-pane" id="tab-settings">
+      <div class="panel-card">
+        <div class="panel-title">🔑 Affiliate Network Credentials & Security</div>
+        <form id="formSettings">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Amazon Associates Store Tag ID</label>
+              <input type="text" id="setAmazonTag" class="form-control" placeholder="e.g. yourstore-21 (India) or yourstore-20 (US)">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">PartnerStack Ref ID / Username</label>
+              <input type="text" id="setPartnerStackId" class="form-control" placeholder="e.g. partner-saas-ref">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Master PIN Passcode (Dashboard Protection)</label>
+              <input type="text" id="setAdminPin" class="form-control" placeholder="Default: admin123">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Auto-Posting Frequency</label>
+              <select id="setPostingInterval" class="form-control">
+                <option value="3">Every 3 Hours</option>
+                <option value="6">Every 6 Hours</option>
+                <option value="12">Every 12 Hours</option>
+                <option value="24">Once Daily (24 Hours)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Custom LLM API Key (Optional)</label>
+            <input type="password" id="setOpenAiKey" class="form-control" placeholder="OpenAI or Gemini API Key (Leave blank to use built-in AI engine)">
+          </div>
+
+          <button type="submit" class="btn-trigger">
+            <span>💾</span> Save Network Credentials & Security PIN
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="/admin/admin.js"></script>
+</body>
+</html>

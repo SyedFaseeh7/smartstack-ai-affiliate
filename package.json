@@ -1,0 +1,17 @@
+{
+  "name": "auto-affiliate-ai",
+  "version": "1.0.0",
+  "description": "Fully Autonomous AI-Powered Affiliate Marketing Platform & Control Center",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "cors": "^2.8.5",
+    "marked": "^15.0.7",
+    "cheerio": "^1.0.0",
+    "node-cron": "^3.0.3"
+  }
+}

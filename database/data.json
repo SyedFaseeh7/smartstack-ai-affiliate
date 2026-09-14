@@ -1,0 +1,309 @@
+{
+  "settings": {
+    "amazonTag": "autoaffiliate-20",
+    "partnerStackId": "partner-saas-ref",
+    "clickbankId": "affiliate123",
+    "openaiApiKey": "",
+    "geminiApiKey": "",
+    "autonomousMode": true,
+    "postingIntervalHours": 12,
+    "activeNiches": [
+      "AI & SaaS Tools",
+      "Smart Home & Tech",
+      "Fitness & Wellness"
+    ],
+    "siteName": "AutoAffiliate AI Deals & Reviews",
+    "siteTagline": "Unbiased AI-Powered Reviews & Exclusive Tech Deals"
+  },
+  "products": [
+    {
+      "id": "prod-1789367400942",
+      "name": "Theragun PRO G5 Percussive Massage Gun",
+      "niche": "Fitness & Wellness",
+      "category": "Recovery & Fitness",
+      "rating": 4.9,
+      "price": "$499.00",
+      "originalPrice": "$599.00",
+      "discount": "17% OFF",
+      "affiliateNetwork": "Amazon Associates",
+      "affiliateUrl": "https://www.amazon.com/dp/B0B5FLR99X?tag=autoaffiliate-20",
+      "imageUrl": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80",
+      "pros": [
+        "QuietForce QF150 motor with 60 lbs stall force",
+        "OLED screen with built-in routine guides",
+        "6 attachments included"
+      ],
+      "cons": [
+        "Premium price point",
+        "Slightly heavier than Theragun Mini"
+      ],
+      "description": "Professional-grade deep tissue percussive therapy device for athletic muscle recovery.",
+      "keyFeatures": [
+        "60 lbs Stall Force",
+        "OLED Guided Routines",
+        "Bluetooth App Control",
+        "Swappable Battery"
+      ]
+    },
+    {
+      "id": "prod-1789367354795",
+      "name": "Theragun PRO G5 Percussive Massage Gun",
+      "niche": "Fitness & Wellness",
+      "category": "Recovery & Fitness",
+      "rating": 4.9,
+      "price": "$499.00",
+      "originalPrice": "$599.00",
+      "discount": "17% OFF",
+      "affiliateNetwork": "Amazon Associates",
+      "affiliateUrl": "https://www.amazon.com/dp/B0B5FLR99X?tag=autoaffiliate-20",
+      "imageUrl": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80",
+      "pros": [
+        "QuietForce QF150 motor with 60 lbs stall force",
+        "OLED screen with built-in routine guides",
+        "6 attachments included"
+      ],
+      "cons": [
+        "Premium price point",
+        "Slightly heavier than Theragun Mini"
+      ],
+      "description": "Professional-grade deep tissue percussive therapy device for athletic muscle recovery.",
+      "keyFeatures": [
+        "60 lbs Stall Force",
+        "OLED Guided Routines",
+        "Bluetooth App Control",
+        "Swappable Battery"
+      ]
+    },
+    {
+      "id": "prod-1",
+      "name": "Synthesia AI Video Generator",
+      "niche": "AI & SaaS Tools",
+      "category": "Video & Media",
+      "rating": 4.8,
+      "price": "$22/mo",
+      "originalPrice": "$30/mo",
+      "discount": "26% OFF",
+      "affiliateNetwork": "PartnerStack",
+      "affiliateUrl": "https://partnerstack.com/ref/synthesia-demo",
+      "imageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80",
+      "pros": [
+        "Generates realistic AI avatars in 120+ languages",
+        "No camera or microphone needed",
+        "Templates for marketing & training videos"
+      ],
+      "cons": [
+        "Advanced voice cloning requires Pro plan",
+        "Video rendering takes a few minutes"
+      ],
+      "description": "Create professional AI videos from text in minutes without cameras or actors.",
+      "keyFeatures": [
+        "120+ AI Avatars",
+        "Text-to-Video Engine",
+        "Custom Avatars Support",
+        "Automated Subtitles"
+      ]
+    },
+    {
+      "id": "prod-2",
+      "name": "Jasper AI Copywriter Pro",
+      "niche": "AI & SaaS Tools",
+      "category": "Content & Copywriting",
+      "rating": 4.9,
+      "price": "$39/mo",
+      "originalPrice": "$49/mo",
+      "discount": "20% OFF",
+      "affiliateNetwork": "PartnerStack",
+      "affiliateUrl": "https://partnerstack.com/ref/jasper-ai-trial",
+      "imageUrl": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=600&auto=format&fit=crop&q=80",
+      "pros": [
+        "50+ copywriting templates for ads & blogs",
+        "Integrated SEO Surfer optimization",
+        "Brand voice training"
+      ],
+      "cons": [
+        "Requires slight learning curve for complex prompts",
+        "Higher tier plans for team collaboration"
+      ],
+      "description": "The industry standard AI co-pilot for high-converting marketing copy and long-form articles.",
+      "keyFeatures": [
+        "Brand Voice Training",
+        "SEO Surfer Integration",
+        "Plagiarism Checker",
+        "50+ Content Templates"
+      ]
+    },
+    {
+      "id": "prod-3",
+      "name": "Philips Hue Smart Lighting Starter Kit",
+      "niche": "Smart Home & Tech",
+      "category": "Smart Lighting",
+      "rating": 4.7,
+      "price": "$129.99",
+      "originalPrice": "$159.99",
+      "discount": "19% OFF",
+      "affiliateNetwork": "Amazon Associates",
+      "affiliateUrl": "https://www.amazon.com/dp/B07GJBBGH8?tag=autoaffiliate-20",
+      "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&auto=format&fit=crop&q=80",
+      "pros": [
+        "16 Million Colors & HomeKit/Alexa integration",
+        "Reliable Zigbee Bridge connection",
+        "Automated schedules & geofencing"
+      ],
+      "cons": [
+        "Bridge hub required",
+        "Premium price compared to Bluetooth-only bulbs"
+      ],
+      "description": "Transform your home ambiance with voice-controlled million-color smart bulbs.",
+      "keyFeatures": [
+        "Voice Control (Alexa/Siri/Google)",
+        "Geofencing Auto Turn-On",
+        "16 Million Color Options",
+        "Hue Bridge Included"
+      ]
+    },
+    {
+      "id": "prod-4",
+      "name": "Oura Ring Gen 3 Smart Health Tracker",
+      "niche": "Fitness & Wellness",
+      "category": "Wearables",
+      "rating": 4.6,
+      "price": "$299.00",
+      "originalPrice": "$349.00",
+      "discount": "14% OFF",
+      "affiliateNetwork": "Amazon Associates",
+      "affiliateUrl": "https://www.amazon.com/dp/B0B5FLR49M?tag=autoaffiliate-20",
+      "imageUrl": "https://images.unsplash.com/photo-1576243345690-4e4b79b63284?w=600&auto=format&fit=crop&q=80",
+      "pros": [
+        "Discreet titanium ring design",
+        "Industry-leading sleep stage & readiness analysis",
+        "7-day battery life"
+      ],
+      "cons": [
+        "Monthly subscription required for full app features",
+        "Sizing kit needed before ordering"
+      ],
+      "description": "Accurate 24/7 heart rate, sleep quality, and body temperature biometric monitoring in a sleek ring.",
+      "keyFeatures": [
+        "Sleep Readiness Score",
+        "Body Temp Sensing",
+        "Period Tracking",
+        "Ultra Light Titanium"
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "art-1789367400947",
+      "title": "Theragun PRO G5 Percussive Massage Gun Review (2026): Is It Worth Your Money?",
+      "slug": "theragun-pro-g5-percussive-massage-gun-review-2026-is-it-worth-your-money-0947",
+      "niche": "Fitness & Wellness",
+      "category": "Product Review",
+      "affiliateNetwork": "Amazon Associates",
+      "productId": "prod-1789367400942",
+      "snippet": "Theragun PRO G5 Percussive Massage Gun Review (2026): Deep dive into features, pricing ($499.00), pros, cons, and exclusive deal offers.",
+      "content": "# Theragun PRO G5 Percussive Massage Gun Review (2026): Honest In-Depth Analysis\n\n\n*FTC Disclosure: When you buy through links on our site, we may earn an affiliate commission at no extra cost to you. [Learn More](/ftc-disclosure)*\n\n\n\nAre you considering investing in **Theragun PRO G5 Percussive Massage Gun**? In this comprehensive review, we test its key features, pricing, performance, pros, and cons to help you decide if it is the right choice for your needs.\n\n![Theragun PRO G5 Percussive Massage Gun](https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80)\n\n---\n\n## Quick Verdict & Rating\n\n- **Overall Rating**: ⭐⭐⭐⭐⭐ (4.9 / 5.0)\n- **Current Price**: **$499.00** *(Original: ~$599.00 - 17% OFF)*\n- **Network / Guarantee**: Verified Amazon Associates Merchant\n- **Best For**: Anyone in **Fitness & Wellness** looking for reliable, top-tier performance.\n\n<div class=\"cta-box\">\n  <h3>🔥 Exclusive Deal Available Today</h3>\n  <p>Get instant access to Theragun PRO G5 Percussive Massage Gun with current promotional discounts.</p>\n  <a href=\"https://www.amazon.com/dp/B0B5FLR99X?tag=autoaffiliate-20\" target=\"_blank\" rel=\"nofollow sponsored\" class=\"btn btn-primary btn-lg\">👉 Check Best Price & Claim Offer on Theragun PRO G5 Percussive Massage Gun</a>\n</div>\n\n---\n\n## What is Theragun PRO G5 Percussive Massage Gun?\n\nProfessional-grade deep tissue percussive therapy device for athletic muscle recovery.\n\nWhether you are looking to streamline your workflow in **Recovery & Fitness** or looking for industry-leading reliability, Theragun PRO G5 Percussive Massage Gun delivers outstanding results out-of-the-box.\n\n### Core Key Features:\n- **60 lbs Stall Force**: Designed to maximize efficiency and user experience.\n- **OLED Guided Routines**: Designed to maximize efficiency and user experience.\n- **Bluetooth App Control**: Designed to maximize efficiency and user experience.\n- **Swappable Battery**: Designed to maximize efficiency and user experience.\n\n---\n\n## Pros & Cons\n\n<div class=\"pros-cons-grid\">\n  <div class=\"pros-card\">\n    <h4>✅ What We Loved (Pros)</h4>\n    <ul>\n      <li>QuietForce QF150 motor with 60 lbs stall force</li>\n<li>OLED screen with built-in routine guides</li>\n<li>6 attachments included</li>\n    </ul>\n  </div>\n  <div class=\"cons-card\">\n    <h4>⚠️ Room for Improvement (Cons)</h4>\n    <ul>\n      <li>Premium price point</li>\n<li>Slightly heavier than Theragun Mini</li>\n    </ul>\n  </div>\n</div>\n\n---\n\n## Pricing & Value for Money\n\nAt **$499.00** (regularly $599.00), Theragun PRO G5 Percussive Massage Gun offers exceptional value compared to legacy alternatives in the **Fitness & Wellness** market.\n\n> **Savings Tip**: Buying through our official link grants you access to special merchant discounts (17% OFF).\n\n---\n\n## Final Recommendation: Should You Buy Theragun PRO G5 Percussive Massage Gun?\n\nIf you want a proven solution that excels in **Recovery & Fitness**, **Theragun PRO G5 Percussive Massage Gun** is easily one of the best investments you can make this year.\n\n<div class=\"cta-banner\">\n  <a href=\"https://www.amazon.com/dp/B0B5FLR99X?tag=autoaffiliate-20\" target=\"_blank\" rel=\"nofollow sponsored\" class=\"btn btn-primary btn-xl\">👉 Get Theragun PRO G5 Percussive Massage Gun at Lowest Price Now</a>\n</div>\n",
+      "status": "published",
+      "publishedAt": "2026-09-14T06:30:00.947Z",
+      "views": 2,
+      "clicks": 0
+    },
+    {
+      "id": "art-1789367354797",
+      "title": "Theragun PRO G5 Percussive Massage Gun Review (2026): Is It Worth Your Money?",
+      "slug": "theragun-pro-g5-percussive-massage-gun-review-2026-is-it-worth-your-money-4797",
+      "niche": "Fitness & Wellness",
+      "category": "Product Review",
+      "affiliateNetwork": "Amazon Associates",
+      "productId": "prod-1789367354795",
+      "snippet": "Theragun PRO G5 Percussive Massage Gun Review (2026): Deep dive into features, pricing ($499.00), pros, cons, and exclusive deal offers.",
+      "content": "# Theragun PRO G5 Percussive Massage Gun Review (2026): Honest In-Depth Analysis\n\n\n*FTC Disclosure: When you buy through links on our site, we may earn an affiliate commission at no extra cost to you. [Learn More](/ftc-disclosure)*\n\n\n\nAre you considering investing in **Theragun PRO G5 Percussive Massage Gun**? In this comprehensive review, we test its key features, pricing, performance, pros, and cons to help you decide if it is the right choice for your needs.\n\n![Theragun PRO G5 Percussive Massage Gun](https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80)\n\n---\n\n## Quick Verdict & Rating\n\n- **Overall Rating**: ⭐⭐⭐⭐⭐ (4.9 / 5.0)\n- **Current Price**: **$499.00** *(Original: ~$599.00 - 17% OFF)*\n- **Network / Guarantee**: Verified Amazon Associates Merchant\n- **Best For**: Anyone in **Fitness & Wellness** looking for reliable, top-tier performance.\n\n<div class=\"cta-box\">\n  <h3>🔥 Exclusive Deal Available Today</h3>\n  <p>Get instant access to Theragun PRO G5 Percussive Massage Gun with current promotional discounts.</p>\n  <a href=\"https://www.amazon.com/dp/B0B5FLR99X?tag=autoaffiliate-20\" target=\"_blank\" rel=\"nofollow sponsored\" class=\"btn btn-primary btn-lg\">👉 Check Best Price & Claim Offer on Theragun PRO G5 Percussive Massage Gun</a>\n</div>\n\n---\n\n## What is Theragun PRO G5 Percussive Massage Gun?\n\nProfessional-grade deep tissue percussive therapy device for athletic muscle recovery.\n\nWhether you are looking to streamline your workflow in **Recovery & Fitness** or looking for industry-leading reliability, Theragun PRO G5 Percussive Massage Gun delivers outstanding results out-of-the-box.\n\n### Core Key Features:\n- **60 lbs Stall Force**: Designed to maximize efficiency and user experience.\n- **OLED Guided Routines**: Designed to maximize efficiency and user experience.\n- **Bluetooth App Control**: Designed to maximize efficiency and user experience.\n- **Swappable Battery**: Designed to maximize efficiency and user experience.\n\n---\n\n## Pros & Cons\n\n<div class=\"pros-cons-grid\">\n  <div class=\"pros-card\">\n    <h4>✅ What We Loved (Pros)</h4>\n    <ul>\n      <li>QuietForce QF150 motor with 60 lbs stall force</li>\n<li>OLED screen with built-in routine guides</li>\n<li>6 attachments included</li>\n    </ul>\n  </div>\n  <div class=\"cons-card\">\n    <h4>⚠️ Room for Improvement (Cons)</h4>\n    <ul>\n      <li>Premium price point</li>\n<li>Slightly heavier than Theragun Mini</li>\n    </ul>\n  </div>\n</div>\n\n---\n\n## Pricing & Value for Money\n\nAt **$499.00** (regularly $599.00), Theragun PRO G5 Percussive Massage Gun offers exceptional value compared to legacy alternatives in the **Fitness & Wellness** market.\n\n> **Savings Tip**: Buying through our official link grants you access to special merchant discounts (17% OFF).\n\n---\n\n## Final Recommendation: Should You Buy Theragun PRO G5 Percussive Massage Gun?\n\nIf you want a proven solution that excels in **Recovery & Fitness**, **Theragun PRO G5 Percussive Massage Gun** is easily one of the best investments you can make this year.\n\n<div class=\"cta-banner\">\n  <a href=\"https://www.amazon.com/dp/B0B5FLR99X?tag=autoaffiliate-20\" target=\"_blank\" rel=\"nofollow sponsored\" class=\"btn btn-primary btn-xl\">👉 Get Theragun PRO G5 Percussive Massage Gun at Lowest Price Now</a>\n</div>\n",
+      "status": "published",
+      "publishedAt": "2026-09-14T06:29:14.797Z",
+      "views": 2,
+      "clicks": 0
+    },
+    {
+      "id": "art-1",
+      "title": "Top 5 AI Tools to Automate Your Business in 2026 (In-Depth Review)",
+      "slug": "top-5-ai-tools-automate-business-2026",
+      "niche": "AI & SaaS Tools",
+      "category": "Buyer Guide",
+      "affiliateNetwork": "PartnerStack",
+      "productId": "prod-1",
+      "snippet": "Discover the highest ROI AI software solutions that can save your team 20+ hours per week, from automated video generation to AI copywriting.",
+      "content": "# Top 5 AI Tools to Automate Your Business in 2026 (In-Depth Review)\n\n*Updated for September 2026 | FTC Disclosure: We earn affiliate commissions from qualifying purchases made through our links.*\n\nArtificial Intelligence has transformed from a tech luxury into a core business necessity. Whether you run an e-commerce store, digital agency, or content creation studio, leverage the right AI stack to multiply your output by 10x.\n\nHere is our definitive list of the top AI software platforms of 2026, tested and evaluated on ROI, ease of use, and automation capabilities.\n\n---\n\n## 1. Synthesia AI – Best AI Video Generator for Marketing & Training\n\n![Synthesia AI](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80)\n\n**Rating**: ⭐⭐⭐⭐⭐ (4.8/5)  \n**Starting Price**: $22/mo *(Exclusive Deal: 26% OFF)*  \n**Best For**: Marketing teams, online courses, product walkthroughs.\n\nSynthesia leads the market in turn-key video creation. Instead of hiring actors, setting up cameras, or editing footage for days, Synthesia converts text scripts into human-like video avatars in over 120 languages.\n\n### Key Features:\n- 120+ Lifelike AI Avatars & Voice Synthesizers\n- One-click Script Assistant\n- Custom Studio Avatar Support\n- Automated Closed-Caption Generation\n\n> [!TIP]\n> **Why we recommend it**: Synthesia cut video production costs by over 80% for enterprise clients while maintaining broadcast quality.\n\n[👉 Check Current Discount & Free Trial on Synthesia](https://partnerstack.com/ref/synthesia-demo)\n\n---\n\n## 2. Jasper AI – Premium AI Copywriter & Marketing Co-Pilot\n\n![Jasper AI](https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80)\n\n**Rating**: ⭐⭐⭐⭐⭐ (4.9/5)  \n**Starting Price**: $39/mo *(20% OFF Deal)*  \n**Best For**: Ad agencies, blog publishers, SEO strategists.\n\nJasper AI remains the gold standard for high-converting marketing copywriting. Unlike generic chat tools, Jasper is pre-trained on high-performing sales letters, email funnels, and blog frameworks.\n\n### Key Features:\n- Custom Brand Voice Matching\n- Surfer SEO Native Integration\n- Built-in Plagiarism Protection\n- 50+ Specialized Copy Templates\n\n[👉 Claim Exclusive 20% Discount on Jasper AI](https://partnerstack.com/ref/jasper-ai-trial)\n\n---\n\n## Summary Verdict: Which AI Tool Should You Choose?\n\n- If your goal is **Video & Media Creation**, start with [Synthesia AI](https://partnerstack.com/ref/synthesia-demo).\n- If your focus is **Written Content & Copywriting**, choose [Jasper AI](https://partnerstack.com/ref/jasper-ai-trial).\n",
+      "status": "published",
+      "publishedAt": "2026-09-14T10:00:00.000Z",
+      "views": 342,
+      "clicks": 48
+    },
+    {
+      "id": "art-2",
+      "title": "Philips Hue Starter Kit Review: Is It Still Worth It in 2026?",
+      "slug": "philips-hue-starter-kit-review-2026",
+      "niche": "Smart Home & Tech",
+      "category": "Product Review",
+      "affiliateNetwork": "Amazon Associates",
+      "productId": "prod-3",
+      "snippet": "We tested the Philips Hue Smart Lighting Kit for 6 months. Here is our breakdown of performance, Apple HomeKit integration, and value.",
+      "content": "# Philips Hue Starter Kit Review: Is It Still Worth It in 2026?\n\n*FTC Disclosure: As an Amazon Associate, we earn from qualifying purchases.*\n\nSmart lighting is the cornerstone of any modern smart home setup. But with low-cost Bluetooth alternatives flooding the market, does the premium **Philips Hue Starter Kit** justify its price tag?\n\nWe put the Hue ecosystem through a rigorous 6-month hands-on test. Here is our honest verdict.\n\n---\n\n## Performance & Light Quality\n\n![Philips Hue Lighting](https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80)\n\nPhilips Hue bulbs offer unmatched color accuracy across all 16 million colors. The whites transition seamlessly from warm candlelight (2000K) to cool daylight (6500K), making it perfect for reducing eye strain during work hours.\n\n### Pros & Cons:\n**Pros:**\n- Zero latency responsiveness via Zigbee Hue Bridge\n- Flawless Alexa, Google Home, and Apple HomeKit native support\n- Dynamic lighting scenes that sync with music & movies\n\n**Cons:**\n- Requires the included Bridge hub plugged into your router\n- Higher initial investment than budget brands\n\n---\n\n## The Verdict: 4.7 / 5 Stars\n\nIf you want reliable, flicker-free, fully automated smart lighting that works every single time without dropping Wi-Fi connection, Philips Hue remains undefeated.\n\n[👉 Check Lowest Amazon Price & Available Deals](https://www.amazon.com/dp/B07GJBBGH8?tag=autoaffiliate-20)\n",
+      "status": "published",
+      "publishedAt": "2026-09-13T14:30:00.000Z",
+      "views": 215,
+      "clicks": 31
+    }
+  ],
+  "clicks": [
+    {
+      "id": "clk-101",
+      "articleId": "art-1",
+      "productId": "prod-1",
+      "network": "PartnerStack",
+      "timestamp": "2026-09-14T09:12:00.000Z",
+      "subId": "blog_review_cta"
+    },
+    {
+      "id": "clk-102",
+      "articleId": "art-1",
+      "productId": "prod-2",
+      "network": "PartnerStack",
+      "timestamp": "2026-09-14T09:45:00.000Z",
+      "subId": "blog_review_cta"
+    },
+    {
+      "id": "clk-103",
+      "articleId": "art-2",
+      "productId": "prod-3",
+      "network": "Amazon Associates",
+      "timestamp": "2026-09-14T10:15:00.000Z",
+      "subId": "amazon_cta_btn"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "camp-1",
+      "name": "Q3 SaaS Tools Growth",
+      "niche": "AI & SaaS Tools",
+      "targetKeywords": [
+        "best ai video tools",
+        "ai copywriter comparison",
+        "top saas automation"
+      ],
+      "status": "active",
+      "articlesGenerated": 8,
+      "lastRun": "2026-09-14T10:00:00.000Z"
+    },
+    {
+      "id": "camp-2",
+      "name": "Smart Home Automation Deals",
+      "niche": "Smart Home & Tech",
+      "targetKeywords": [
+        "philips hue review",
+        "best smart lights 2026"
+      ],
+      "status": "active",
+      "articlesGenerated": 5,
+      "lastRun": "2026-09-13T14:30:00.000Z"
+    }
+  ]
+}
