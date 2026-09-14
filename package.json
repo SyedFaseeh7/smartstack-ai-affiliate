@@ -1,17 +1,17 @@
 {
-  "name": "auto-affiliate-ai",
+  "name": "smartstack-ai",
   "version": "1.0.0",
-  "description": "Fully Autonomous AI-Powered Affiliate Marketing Platform & Control Center",
+  "description": "SmartStack AI - Autonomous AI-Powered Tech & Software Review Platform",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
   },
   "dependencies": {
-    "express": "^4.21.2",
-    "cors": "^2.8.5",
-    "marked": "^15.0.7",
     "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "marked": "^15.0.7",
     "node-cron": "^3.0.3"
   }
 }
