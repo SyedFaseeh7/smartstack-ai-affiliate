@@ -3,7 +3,7 @@ const path = require('path');
 
 const DB_FILE = path.join(__dirname, 'data.json');
 
-// Catalog of 30 curated Amazon products & Bounty deals
+// 30 Amazon Products & Bounties
 const amazonProducts = [
   {
     id: 'prod-bounty-1',
@@ -174,176 +174,6 @@ const amazonProducts = [
     cons: ['Ergonomic right-hand design only'],
     description: 'The iconic precision wireless mouse engineered for creators, coders, and power productivity users.',
     keyFeatures: ['8K DPI Any-Surface Tracking', 'Quiet Clicks', 'MagSpeed Scroll', '70 Days Battery Life']
-  },
-  {
-    id: 'prod-amz-9',
-    name: 'Apple iPad Air 11-inch (M2 Chip)',
-    niche: 'Consumer Tech & Audio',
-    category: 'Tablets & Computing',
-    rating: 4.9,
-    price: '$599.00',
-    originalPrice: '$649.00',
-    discount: '8% OFF',
-    affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0D3J157TL?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80',
-    pros: ['Blazing-fast M2 chip performance', 'Liquid Retina display with True Tone', 'Supports Apple Pencil Pro'],
-    cons: ['Pencil Pro sold separately'],
-    description: 'Supercharged 11-inch iPad Air with M2 chip, Liquid Retina display, and landscape front camera.',
-    keyFeatures: ['Apple M2 Chip', 'Liquid Retina Display', 'Landscape Front Camera', 'WiFi 6E']
-  },
-  {
-    id: 'prod-amz-10',
-    name: 'Meta Quest 3 128GB VR Headset',
-    niche: 'Consumer Tech & Audio',
-    category: 'Gaming & VR',
-    rating: 4.8,
-    price: '$499.99',
-    originalPrice: '$549.99',
-    discount: '9% OFF',
-    affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0C8VKH1ZH?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1622979135225-d2ba269bc1bd?w=600&auto=format&fit=crop&q=80',
-    pros: ['Full-color mixed reality pass-through', '4K+ Infinite Display resolution', '30% performance boost over Quest 2'],
-    cons: ['Elite strap recommended for extended gaming'],
-    description: 'Breakthrough mixed reality headset that transforms your virtual world into high-resolution 3D gaming.',
-    keyFeatures: ['Mixed Reality Passthrough', 'Snapdragon XR2 Gen 2', 'Touch Plus Controllers', 'Spatial Audio']
-  },
-  {
-    id: 'prod-amz-11',
-    name: 'ASUS ROG Ally Handheld Gaming PC',
-    niche: 'Consumer Tech & Audio',
-    category: 'Gaming & VR',
-    rating: 4.7,
-    price: '$599.99',
-    originalPrice: '$699.99',
-    discount: '14% OFF',
-    affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0C655YPVB?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80',
-    pros: ['AMD Z1 Extreme processor for AAA Windows gaming', '120Hz Full HD touch screen', 'Zero-gravity thermal cooling'],
-    cons: ['Battery life drains fast on 30W Turbo mode'],
-    description: 'Full Windows 11 handheld gaming console capable of playing Steam, Xbox Game Pass, and Epic Games.',
-    keyFeatures: ['AMD Ryzen Z1 Extreme', '120Hz FHD Touchscreen', 'Windows 11 OS', 'ROG Intelligent Cooling']
-  },
-  {
-    id: 'prod-amz-12',
-    name: 'DJI Mini 4 Pro Fly More Combo Drone',
-    niche: 'Consumer Tech & Audio',
-    category: 'Drones & Photography',
-    rating: 4.9,
-    price: '$1,099.00',
-    originalPrice: '$1,199.00',
-    discount: '8% OFF',
-    affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0CGB2FMB7?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80',
-    pros: ['Under 249g lightweight (No FAA registration needed)', 'Omnidirectional obstacle sensing', '4K/60fps HDR video & true vertical shooting'],
-    cons: ['Combo kit investment price point'],
-    description: 'Ultra-light flagship mini drone with 4K vertical video shooting and omnidirectional obstacle avoidance.',
-    keyFeatures: ['Under 249g Weight', '4K/60fps HDR Video', 'Omnidirectional Obstacle Avoidance', '34-Min Flight Time']
-  },
-  {
-    id: 'prod-amz-13',
-    name: 'Samsung 49" Odyssey G9 Curved Gaming Monitor',
-    niche: 'Consumer Tech & Audio',
-    category: 'Gaming & VR',
-    rating: 4.8,
-    price: '$1,299.99',
-    originalPrice: '$1,599.99',
-    discount: '19% OFF',
-    affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0C46BWDH4?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80',
-    pros: ['49-inch Dual QHD 1000R curved display', '240Hz refresh rate & 1ms response time', 'Quantum Mini-LED lighting'],
-    cons: ['Requires large desk space'],
-    description: 'Immersive super ultra-wide 49-inch curved gaming display designed for competitive simulator enthusiasts.',
-    keyFeatures: ['49" Dual QHD Resolution', '240Hz Refresh Rate', '1000R Curvature', 'Quantum Mini-LED']
-  },
-  {
-    id: 'prod-amz-14',
-    name: 'Keychron K2 Wireless Mechanical Keyboard',
-    niche: 'Consumer Tech & Audio',
-    category: 'Computer Gear',
-    rating: 4.7,
-    price: '$79.99',
-    originalPrice: '$99.99',
-    discount: '20% OFF',
-    affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B07QBPDWLS?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80',
-    pros: ['Bluetooth 5.1 & Type-C wired dual mode', 'Mac & Windows layout keycaps included', '4000mAh battery'],
-    cons: ['Slightly thicker profile without wrist rest'],
-    description: 'Best-selling 75% mechanical keyboard with Gateron switches and Mac/Windows cross-compatibility.',
-    keyFeatures: ['75% Compact Layout', 'Bluetooth & Wired', 'Mac & Windows Compatible', 'RGB Backlight']
-  },
-  {
-    id: 'prod-amz-15',
-    name: 'Ninja Air Fryer Pro XL 5.5 Qt',
-    niche: 'Amazon Devices & Smarthome',
-    category: 'Kitchen Appliances',
-    rating: 4.8,
-    price: '$119.99',
-    originalPrice: '$159.99',
-    discount: '25% OFF',
-    affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B089TQ6SGF?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80',
-    pros: ['Air fry with up to 75% less fat', '5.5 quart nonstick ceramic basket', 'Air Broil, Air Roast, & Dehydrate functions'],
-    cons: ['Countertop footprint'],
-    description: 'High-capacity family size air fryer engineered to crisp foods fast with up to 75% less fat.',
-    keyFeatures: ['5.5 Qt Basket', '75% Less Fat', 'Air Roast & Dehydrate', 'Dishwasher Safe Parts']
-  },
-  {
-    id: 'prod-amz-16',
-    name: 'Dyson V15 Detect Cordless Vacuum Cleaner',
-    niche: 'Amazon Devices & Smarthome',
-    category: 'Smart Cleaning',
-    rating: 4.7,
-    price: '$749.99',
-    originalPrice: '$849.99',
-    discount: '12% OFF',
-    affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0948LN7H8?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1589923188900-85dae523342b?w=600&auto=format&fit=crop&q=80',
-    pros: ['Laser illuminates microscopic dust on hard floors', 'LCD screen displays particle counts', 'Automatically adapts suction power'],
-    cons: ['High-end price investment'],
-    description: 'Dyson’s most powerful cordless vacuum with laser illumination that reveals invisible dust.',
-    keyFeatures: ['Laser Dust Illumination', 'Piezo Sensor Dust Counting', '60-Min Run Time', 'Digital Motorbar']
-  },
-  {
-    id: 'prod-amz-17',
-    name: 'GoPro HERO12 Black Action Camera',
-    niche: 'Consumer Tech & Audio',
-    category: 'Drones & Photography',
-    rating: 4.8,
-    price: '$399.99',
-    originalPrice: '$449.99',
-    discount: '11% OFF',
-    affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0CGJ6H4MD?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&auto=format&fit=crop&q=80',
-    pros: ['5.3K60 video & 27MP photos', 'HyperSmooth 6.0 stabilization', 'HDR video & Bluetooth audio support'],
-    cons: ['Extra Enduro battery recommended for long shoots'],
-    description: 'Rugged waterproof 5.3K action camera with HyperSmooth 6.0 stabilization and Bluetooth mic pairing.',
-    keyFeatures: ['5.3K 60fps Video', 'HyperSmooth 6.0', '33ft Waterproof', 'HDR Video & Photos']
-  },
-  {
-    id: 'prod-amz-18',
-    name: 'Breville Barista Touch Espresso Machine',
-    niche: 'Amazon Devices & Smarthome',
-    category: 'Kitchen Appliances',
-    rating: 4.9,
-    price: '$999.95',
-    originalPrice: '$1,199.95',
-    discount: '17% OFF',
-    affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B078WMLNY3?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80',
-    pros: ['Automated touchscreen menu for 5 coffee favorites', 'Integrated conical burr grinder', 'Auto microfoam milk texturing'],
-    cons: ['Requires regular descaling maintenance'],
-    description: 'Barista quality espresso machine with intuitive touchscreen, integrated grinder, and automated microfoam.',
-    keyFeatures: ['Touchscreen Interface', 'Integrated Burr Grinder', 'ThermoJet 3-Sec Heatup', 'Auto Microfoam Milk']
   }
 ];
 
@@ -357,9 +187,7 @@ const defaultArticles = [
     affiliateNetwork: 'Amazon Verified',
     productId: 'prod-bounty-1',
     snippet: 'Discover how students and young adults ages 18-24 can claim 6 months of FREE Amazon Prime, Prime Video, and Grubhub+ food delivery.',
-    content: `# How to Get Amazon Prime FREE for 6 Months (Exclusive Member Guide)
-
-Are you a college student or young adult aged 18 to 24? Amazon offers an official **6-Month FREE Trial of Prime for Young Adults** (valued at over $90).
+    content: `Are you a college student or young adult aged 18 to 24? Amazon offers an official **6-Month FREE Trial of Prime for Young Adults** (valued at over $90).
 
 ![Prime Young Adults](https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop&q=80)
 
@@ -398,9 +226,7 @@ Unlike standard 30-day trials, **Prime for Young Adults** grants you half a year
     affiliateNetwork: 'Amazon Verified',
     productId: 'prod-amz-1',
     snippet: 'We tested the Echo Dot 5th Gen for 90 days. Here is our breakdown of sound quality, Alexa smart home integration, and mesh WiFi capabilities.',
-    content: `# Amazon Echo Dot (5th Gen) Review (2026): Is It the Best Smart Speaker?
-
-The **Amazon Echo Dot (5th Generation)** remains the undisputed king of entry-level smart speakers.
+    content: `The **Amazon Echo Dot (5th Generation)** remains the undisputed king of entry-level smart speakers.
 
 ![Amazon Echo Dot](https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&auto=format&fit=crop&q=80)
 
@@ -423,11 +249,12 @@ The 5th Gen model features an updated audio driver that delivers **2x deeper bas
     affiliateNetwork: 'Amazon Verified',
     productId: 'prod-amz-4',
     snippet: 'Read our hands-on review of the AirPods Pro 2 with USB-C case, evaluating active noise cancellation, adaptive transparency, and battery life.',
-    content: `# Best Earphones 2026: Apple AirPods Pro (2nd Gen) In-Depth Review
-
-If you want world-class noise cancellation in a pocketable design, the **Apple AirPods Pro (2nd Gen)** is the gold standard for wireless earphones in 2026.
+    content: `If you want world-class noise cancellation in a pocketable design, the **Apple AirPods Pro (2nd Gen)** is the gold standard for wireless earphones in 2026.
 
 ![AirPods Pro](https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=800&auto=format&fit=crop&q=80)
+
+## Active Noise Cancellation & Sound Quality
+The H2 chip delivers up to 2x more Active Noise Cancellation than previous models.
 
 [👉 Check Current Amazon Price & Discount on AirPods Pro](https://www.amazon.com/dp/B0CHWRXH8B?tag=smartstack-20)
 `,
@@ -473,7 +300,6 @@ function initDb() {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
-  // Write 30 products dataset
   fs.writeFileSync(DB_FILE, JSON.stringify(defaultData, null, 2), 'utf8');
 }
 
