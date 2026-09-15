@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadCampaigns();
   loadArticles();
   loadProducts();
+  loadCatalogHealth();
 
   // Autonomous Toggle
   const autoToggle = document.getElementById('autonomousToggle');
@@ -56,6 +57,26 @@ document.addEventListener('DOMContentLoaded', () => {
       } finally {
         btnMine.disabled = false;
         btnMine.innerHTML = '<span>⛏️</span> Mine New Product';
+      }
+    });
+  }
+
+  // Catalog Health Audit Button
+  const btnAudit = document.getElementById('btnAuditCatalog');
+  if (btnAudit) {
+    btnAudit.addEventListener('click', async () => {
+      btnAudit.disabled = true;
+      btnAudit.innerHTML = '<span>⏳</span> Auditing Links...';
+      try {
+        const res = await fetch('/api/admin/catalog/health?force=true');
+        const data = await res.json();
+        updateHealthBadge(data);
+        showNotification(`✅ Catalog Audit: ${data.healthScore}% Score (${data.summary.healthyUrls}/${data.catalogSize} Live Links)`);
+      } catch (err) {
+        alert('Health check failed: ' + err.message);
+      } finally {
+        btnAudit.disabled = false;
+        btnAudit.innerHTML = '<span>🔍</span> Audit Link Health';
       }
     });
   }
@@ -326,4 +347,31 @@ function showNotification(msg) {
   toast.innerText = msg;
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 3000);
+}
+
+// Load Real-Time Catalog Health
+async function loadCatalogHealth() {
+  try {
+    const res = await fetch('/api/admin/catalog/health');
+    const data = await res.json();
+    updateHealthBadge(data);
+  } catch (err) {
+    console.error('Catalog health load error:', err);
+  }
+}
+
+function updateHealthBadge(data) {
+  const badge = document.getElementById('catalogHealthBadge');
+  if (!badge || !data) return;
+  const score = data.healthScore || 100;
+  badge.innerText = `Health: ${score}% ${score >= 90 ? '🟢' : (score >= 70 ? '🟡' : '🔴')}`;
+  if (score >= 90) {
+    badge.style.background = 'rgba(16, 185, 129, 0.2)';
+    badge.style.color = '#34d399';
+    badge.style.borderColor = 'rgba(16, 185, 129, 0.3)';
+  } else {
+    badge.style.background = 'rgba(239, 68, 68, 0.2)';
+    badge.style.color = '#f87171';
+    badge.style.borderColor = 'rgba(239, 68, 68, 0.3)';
+  }
 }

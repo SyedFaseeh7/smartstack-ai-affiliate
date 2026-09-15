@@ -8,6 +8,7 @@ const { mineNewProduct } = require('./engine/productMiner');
 const { generateArticleForProduct } = require('./engine/aiContentGenerator');
 const { generateSitemap, generateRssFeed } = require('./engine/seoFeedGenerator');
 const { initScheduler, runAutonomousCycle } = require('./engine/scheduler');
+const { runCatalogHealthCheck } = require('./engine/catalogMonitor');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -146,6 +147,17 @@ app.post('/api/automation/trigger', async (req, res) => {
     res.json({ success: true, message: 'Autonomous cycle executed successfully', analytics });
   } catch (err) {
     res.status(500).json({ error: err.message });
+  }
+});
+
+// Real-Time Catalog Health & Link Monitoring Audit Endpoint
+app.get('/api/admin/catalog/health', async (req, res) => {
+  try {
+    const force = req.query.force === 'true';
+    const report = await runCatalogHealthCheck(force);
+    res.json(report);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to run catalog health audit', message: err.message });
   }
 });
 

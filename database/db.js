@@ -3,7 +3,6 @@ const path = require('path');
 
 const DB_FILE = path.join(__dirname, 'data.json');
 
-// Catalog of 30 curated Amazon products & Bounty deals
 const amazonProducts = [
   // 1. Membership & Bounty Deals
   {
@@ -34,7 +33,7 @@ const amazonProducts = [
     discount: '2 FREE Audiobooks',
     affiliateNetwork: 'Amazon Verified',
     affiliateUrl: 'https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&auto=format&fit=crop&q=80',
     pros: ['Includes 1 free credit for any premium audiobook', 'Unlimited listening to Audible Plus catalog', 'Keep your audiobooks forever'],
     cons: ['Renews at $14.95/mo after 30 days if not canceled'],
     description: 'Listen to thousands of audiobooks, podcasts, and Audible Originals free for 30 days.',
@@ -86,7 +85,7 @@ const amazonProducts = [
     originalPrice: '$59.99',
     discount: '17% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B09B8V1LZ3?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Amazon+Echo+Dot+5th+Gen+Smart+Speaker&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&auto=format&fit=crop&q=80',
     pros: ['Vibrant sound quality with deeper bass', 'Built-in Alexa voice assistant', 'Eero built-in WiFi extender support'],
     cons: ['Power adapter required'],
@@ -103,7 +102,7 @@ const amazonProducts = [
     originalPrice: '$69.99',
     discount: '14% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0BP9SNVH9?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Amazon+Fire+TV+Stick+4K+Max&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&auto=format&fit=crop&q=80',
     pros: ['Ultra HD 4K streaming with Dolby Vision', 'WiFi 6E high-speed streaming', '16GB storage for games & apps'],
     cons: ['HDMI port required on TV'],
@@ -120,7 +119,7 @@ const amazonProducts = [
     originalPrice: '$169.99',
     discount: '12% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B09TMN58Y2?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Amazon+Kindle+Paperwhite+16GB&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
     pros: ['6.8" 300 ppi glare-free display reads like real paper', 'Adjustable warm light for night reading', 'Up to 10 weeks battery life'],
     cons: ['Monochrome screen'],
@@ -137,7 +136,7 @@ const amazonProducts = [
     originalPrice: '$119.99',
     discount: '25% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0B1N4NBDH?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Blink+Outdoor+4+Wireless+HD+Security+Camera&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80',
     pros: ['Two-year battery life on 2 AA lithium batteries', '1080p HD live view & infrared night vision', 'Enhanced motion detection'],
     cons: ['Blink Sync Module required'],
@@ -154,8 +153,8 @@ const amazonProducts = [
     originalPrice: '$119.99',
     discount: '17% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B08N5NQ869?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80',
+    affiliateUrl: 'https://www.amazon.com/s?k=Ring+Video+Doorbell&tag=smartstack-20',
+    imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=80',
     pros: ['1080p HD video with improved motion detection', 'Night vision & head-to-toe view', 'Real-time phone alerts'],
     cons: ['Ring Protect subscription required for video saves'],
     description: '1080p HD video doorbell with two-way talk, motion alerts, and easy battery installation.',
@@ -171,8 +170,8 @@ const amazonProducts = [
     originalPrice: '$179.99',
     discount: '22% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0BHZT5CCC?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80',
+    affiliateUrl: 'https://www.amazon.com/s?k=Amazon+Fire+HD+10+Tablet&tag=smartstack-20',
+    imageUrl: 'https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600&auto=format&fit=crop&q=80',
     pros: ['10.1" 1080p Full HD display', '25% faster octa-core processor', '13-hour battery life'],
     cons: ['Amazon Appstore instead of Google Play'],
     description: 'Vibrant 10.1" Full HD tablet designed for streaming Prime Video, reading, and casual gaming.',
@@ -190,7 +189,7 @@ const amazonProducts = [
     originalPrice: '$249.00',
     discount: '20% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0CHWRXH8B?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Apple+AirPods+Pro+2nd+Gen+Wireless+Earbuds&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=600&auto=format&fit=crop&q=80',
     pros: ['Up to 2x more Active Noise Cancellation', 'Adaptive Audio & Transparency Mode', 'USB-C charging case with Precision Finding'],
     cons: ['Best experienced with Apple iOS devices'],
@@ -207,8 +206,8 @@ const amazonProducts = [
     originalPrice: '$59.99',
     discount: '25% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B099F558MC?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1609592424083-d5d34208d132?w=600&auto=format&fit=crop&q=80',
+    affiliateUrl: 'https://www.amazon.com/s?k=Anker+Magnetic+Wireless+Power+Bank+10000mAh&tag=smartstack-20',
+    imageUrl: 'https://images.unsplash.com/photo-1625961332771-3f40b0e2bdcf?w=600&auto=format&fit=crop&q=80',
     pros: ['Snap-and-go MagSafe wireless charging', 'Foldable built-in phone kickstand', '10,000mAh high capacity'],
     cons: ['MagSafe compatible phones required for magnetic snap'],
     description: 'Portable magnetic battery pack with built-in stand for MagSafe iPhones and USB-C fast charging.',
@@ -224,7 +223,7 @@ const amazonProducts = [
     originalPrice: '$399.99',
     discount: '13% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B09XS7JWHH?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Sony+WH-1000XM5+Wireless+Headphones&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80',
     pros: ['Industry-leading noise canceling with 8 microphones', 'Ultra-comfortable lightweight design', '30-hour battery life with quick charging'],
     cons: ['Non-folding headband earcups'],
@@ -241,7 +240,7 @@ const amazonProducts = [
     originalPrice: '$109.99',
     discount: '9% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B09HM94VDS?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Logitech+MX+Master+3S+Wireless+Performance+Mouse&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80',
     pros: ['8K DPI track-anywhere optical sensor', 'Quiet click switches reduce noise by 90%', 'MagSpeed electromagnetic scroll wheel'],
     cons: ['Ergonomic right-hand design only'],
@@ -258,7 +257,7 @@ const amazonProducts = [
     originalPrice: '$649.00',
     discount: '8% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0D3J157TL?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Apple+iPad+Air+11-inch+M2+Chip&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80',
     pros: ['Blazing-fast M2 chip performance', 'Liquid Retina display with True Tone', 'Supports Apple Pencil Pro'],
     cons: ['Pencil Pro sold separately'],
@@ -275,7 +274,7 @@ const amazonProducts = [
     originalPrice: '$99.99',
     discount: '20% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B07QBPDWLS?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Keychron+K2+Wireless+Mechanical+Keyboard&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80',
     pros: ['Bluetooth 5.1 & Type-C wired dual mode', 'Mac & Windows layout keycaps included', '4000mAh battery'],
     cons: ['Slightly thicker profile without wrist rest'],
@@ -292,7 +291,7 @@ const amazonProducts = [
     originalPrice: '$429.00',
     discount: '12% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0CCZ26B5V?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Bose+QuietComfort+Ultra+Wireless+Headphones&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&auto=format&fit=crop&q=80',
     pros: ['Bose Immersive Audio spatial soundstage', 'World-class active noise cancellation', 'CustomTune sound calibration'],
     cons: ['Premium price tier'],
@@ -309,7 +308,7 @@ const amazonProducts = [
     originalPrice: '$219.99',
     discount: '23% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B09VLK9W3S?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Samsung+T7+Shield+2TB+Portable+SSD&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&auto=format&fit=crop&q=80',
     pros: ['Superfast USB 3.2 Gen 2 read speeds up to 1,050 MB/s', 'IP65 water & dust resistance', '3-meter drop durability'],
     cons: ['Included short cables'],
@@ -328,8 +327,8 @@ const amazonProducts = [
     originalPrice: '$549.99',
     discount: '9% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0C8VKH1ZH?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1622979135225-d2ba269bc1bd?w=600&auto=format&fit=crop&q=80',
+    affiliateUrl: 'https://www.amazon.com/s?k=Meta+Quest+3+128GB+VR+Headset&tag=smartstack-20',
+    imageUrl: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=600&auto=format&fit=crop&q=80',
     pros: ['Full-color mixed reality pass-through', '4K+ Infinite Display resolution', '30% performance boost over Quest 2'],
     cons: ['Elite strap recommended for extended gaming'],
     description: 'Breakthrough mixed reality headset that transforms your virtual world into high-resolution 3D gaming.',
@@ -345,7 +344,7 @@ const amazonProducts = [
     originalPrice: '$699.99',
     discount: '14% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0C655YPVB?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=ASUS+ROG+Ally+Handheld+Gaming+PC&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80',
     pros: ['AMD Z1 Extreme processor for AAA Windows gaming', '120Hz Full HD touch screen', 'Zero-gravity thermal cooling'],
     cons: ['Battery life drains fast on 30W Turbo mode'],
@@ -362,7 +361,7 @@ const amazonProducts = [
     originalPrice: '$1,599.99',
     discount: '19% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0C46BWDH4?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Samsung+49+Odyssey+G9+Curved+Gaming+Monitor&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80',
     pros: ['49-inch Dual QHD 1000R curved display', '240Hz refresh rate & 1ms response time', 'Quantum Mini-LED lighting'],
     cons: ['Requires large desk space'],
@@ -379,8 +378,8 @@ const amazonProducts = [
     originalPrice: '$599.99',
     discount: '8% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0BRL8MN4G?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1622979135225-d2ba269bc1bd?w=600&auto=format&fit=crop&q=80',
+    affiliateUrl: 'https://www.amazon.com/s?k=PlayStation+VR2+Headset&tag=smartstack-20',
+    imageUrl: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=600&auto=format&fit=crop&q=80',
     pros: ['4K HDR OLED displays with 120Hz refresh rate', 'Eye tracking & headset haptic feedback', 'Sense controllers with adaptive triggers'],
     cons: ['Requires PlayStation 5 console'],
     description: 'Next-gen virtual reality for PS5 with 4K HDR visuals, eye tracking, and haptic feedback.',
@@ -398,7 +397,7 @@ const amazonProducts = [
     originalPrice: '$1,199.00',
     discount: '8% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0CGB2FMB7?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=DJI+Mini+4+Pro+Fly+More+Combo+Drone&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80',
     pros: ['Under 249g lightweight (No FAA registration needed)', 'Omnidirectional obstacle sensing', '4K/60fps HDR video & true vertical shooting'],
     cons: ['Combo kit investment price point'],
@@ -415,7 +414,7 @@ const amazonProducts = [
     originalPrice: '$449.99',
     discount: '11% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0CGJ6H4MD?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=GoPro+HERO12+Black+Action+Camera&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&auto=format&fit=crop&q=80',
     pros: ['5.3K60 video & 27MP photos', 'HyperSmooth 6.0 stabilization', 'HDR video & Bluetooth audio support'],
     cons: ['Extra Enduro battery recommended for long shoots'],
@@ -432,8 +431,8 @@ const amazonProducts = [
     originalPrice: '$569.00',
     discount: '9% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0CHMVZ765?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&auto=format&fit=crop&q=80',
+    affiliateUrl: 'https://www.amazon.com/s?k=DJI+Osmo+Pocket+3+Gimbal+Camera&tag=smartstack-20',
+    imageUrl: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&auto=format&fit=crop&q=80',
     pros: ['1-inch CMOS sensor for stunning 4K/120fps video', '2-inch rotatable OLED touchscreen', '3-axis mechanical stabilization'],
     cons: ['Compact body requires careful handling'],
     description: 'Pocket-sized 4K handheld camera with 1-inch sensor, rotatable screen, and fast auto-focus for vloggers.',
@@ -451,8 +450,8 @@ const amazonProducts = [
     originalPrice: '$159.99',
     discount: '25% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B089TQ6SGF?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80',
+    affiliateUrl: 'https://www.amazon.com/s?k=Ninja+Air+Fryer+Pro+XL+5.5+Qt&tag=smartstack-20',
+    imageUrl: 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=600&auto=format&fit=crop&q=80',
     pros: ['Air fry with up to 75% less fat', '5.5 quart nonstick ceramic basket', 'Air Broil, Air Roast, & Dehydrate functions'],
     cons: ['Countertop footprint'],
     description: 'High-capacity family size air fryer engineered to crisp foods fast with up to 75% less fat.',
@@ -468,8 +467,8 @@ const amazonProducts = [
     originalPrice: '$849.99',
     discount: '12% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0948LN7H8?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1589923188900-85dae523342b?w=600&auto=format&fit=crop&q=80',
+    affiliateUrl: 'https://www.amazon.com/s?k=Dyson+V15+Detect+Cordless+Vacuum+Cleaner&tag=smartstack-20',
+    imageUrl: 'https://images.unsplash.com/photo-1558317374-067fb5f30001?w=600&auto=format&fit=crop&q=80',
     pros: ['Laser illuminates microscopic dust on hard floors', 'LCD screen displays particle counts', 'Automatically adapts suction power'],
     cons: ['High-end price investment'],
     description: 'Dyson’s most powerful cordless vacuum with laser illumination that reveals invisible dust.',
@@ -485,7 +484,7 @@ const amazonProducts = [
     originalPrice: '$1,199.95',
     discount: '17% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B078WMLNY3?tag=smartstack-20',
+    affiliateUrl: 'https://www.amazon.com/s?k=Breville+Barista+Touch+Espresso+Machine&tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80',
     pros: ['Automated touchscreen menu for 5 coffee favorites', 'Integrated conical burr grinder', 'Auto microfoam milk texturing'],
     cons: ['Requires regular descaling maintenance'],
@@ -502,8 +501,8 @@ const amazonProducts = [
     originalPrice: '$149.95',
     discount: '13% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B08W299W87?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80',
+    affiliateUrl: 'https://www.amazon.com/s?k=Instant+Pot+Duo+Plus+9-in-1+Electric+Pressure+Cooker&tag=smartstack-20',
+    imageUrl: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&auto=format&fit=crop&q=80',
     pros: ['9-in-1 functionality: pressure cooker, slow cooker, rice cooker, yogurt maker, steamer', 'Easy release steam switch', 'Cooks up to 70% faster'],
     cons: ['Inner pot sealing ring requires washing'],
     description: 'Versatile 9-in-1 smart pressure cooker with whisper-quiet steam release and 25 preset cooking programs.',
@@ -519,8 +518,8 @@ const amazonProducts = [
     originalPrice: '$999.00',
     discount: '20% OFF',
     affiliateNetwork: 'Amazon Verified',
-    affiliateUrl: 'https://www.amazon.com/dp/B0B78R4C7M?tag=smartstack-20',
-    imageUrl: 'https://images.unsplash.com/photo-1589923188900-85dae523342b?w=600&auto=format&fit=crop&q=80',
+    affiliateUrl: 'https://www.amazon.com/s?k=iRobot+Roomba+Combo+j7%2B+Robot+Vacuum+and+Mop&tag=smartstack-20',
+    imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80',
     pros: ['Auto-retracting mop lift system prevents wet carpets', 'PrecisionVision navigation avoids pet waste & cables', 'Clean Base auto-disposal unit'],
     cons: ['Base station requires dedicated floor space'],
     description: 'Hands-free robot vacuum and mop that automatically retracts its mop pad on carpets and empties itself.',
@@ -617,13 +616,14 @@ const defaultData = {
   ]
 };
 
-function initDb() {
+function initDb(force = false) {
   const dir = path.dirname(DB_FILE);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
-  // Write full dataset with published articles for all 30 products
-  fs.writeFileSync(DB_FILE, JSON.stringify(defaultData, null, 2), 'utf8');
+  if (!fs.existsSync(DB_FILE) || force) {
+    fs.writeFileSync(DB_FILE, JSON.stringify(defaultData, null, 2), 'utf8');
+  }
 }
 
 function readDb() {
@@ -637,11 +637,15 @@ function readDb() {
 }
 
 function writeDb(data) {
-  initDb();
+  const dir = path.dirname(DB_FILE);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
   fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
 }
 
 module.exports = {
+  reseedDb: () => initDb(true),
   getSettings: () => readDb().settings,
   updateSettings: (newSettings) => {
     const db = readDb();

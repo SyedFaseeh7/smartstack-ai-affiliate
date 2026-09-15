@@ -250,11 +250,21 @@
     <!-- TAB 4: MINED PRODUCT CATALOG -->
     <section class="tab-pane" id="tab-products">
       <div class="panel-card">
-        <div class="panel-title">
-          <span>📦 Mined Affiliate Products</span>
-          <button class="btn-trigger" id="btnMineProduct">
-            <span>⛏️</span> Mine New Product
-          </button>
+        <div class="panel-title" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span>📦 Curated Product Catalog</span>
+            <span id="catalogHealthBadge" style="font-size: 0.75rem; padding: 4px 12px; border-radius: 20px; background: rgba(16, 185, 129, 0.2); color: #34d399; font-weight: 700; border: 1px solid rgba(16, 185, 129, 0.3);">
+              Health: 100% 🟢
+            </span>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn-trigger" id="btnAuditCatalog" style="background: rgba(99, 102, 241, 0.2); border-color: rgba(99, 102, 241, 0.5);">
+              <span>🔍</span> Audit Link Health
+            </button>
+            <button class="btn-trigger" id="btnMineProduct">
+              <span>⛏️</span> Mine New Product
+            </button>
+          </div>
         </div>
         <table class="data-table">
           <thead>
