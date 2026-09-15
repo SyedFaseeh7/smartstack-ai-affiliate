@@ -1,11 +1,14 @@
 const db = require('../database/db');
 
-function generateSitemap(domain = 'http://localhost:3000') {
+function generateSitemap(domain = 'https://smartstack-ai.onrender.com') {
   const articles = db.getArticles();
   
+  // Ensure HTTPS scheme matches Google Search Console property URL
+  const cleanDomain = domain.replace(/^http:\/\//i, 'https://');
+
   const urls = articles.map(art => `
     <url>
-      <loc>${domain}/article/${art.slug}</loc>
+      <loc>${cleanDomain}/article/${art.slug}</loc>
       <lastmod>${new Date(art.publishedAt || Date.now()).toISOString()}</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.8</priority>
@@ -15,7 +18,7 @@ function generateSitemap(domain = 'http://localhost:3000') {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>${domain}/</loc>
+    <loc>${cleanDomain}/</loc>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
   </url>
@@ -23,15 +26,16 @@ function generateSitemap(domain = 'http://localhost:3000') {
 </urlset>`;
 }
 
-function generateRssFeed(domain = 'http://localhost:3000') {
+function generateRssFeed(domain = 'https://smartstack-ai.onrender.com') {
   const articles = db.getArticles();
   const settings = db.getSettings();
+  const cleanDomain = domain.replace(/^http:\/\//i, 'https://');
 
   const items = articles.map(art => `
     <item>
       <title><![CDATA[${art.title}]]></title>
-      <link>${domain}/article/${art.slug}</link>
-      <guid>${domain}/article/${art.slug}</guid>
+      <link>${cleanDomain}/article/${art.slug}</link>
+      <guid>${cleanDomain}/article/${art.slug}</guid>
       <pubDate>${new Date(art.publishedAt || Date.now()).toUTCString()}</pubDate>
       <description><![CDATA[${art.snippet}]]></description>
     </item>
@@ -41,7 +45,7 @@ function generateRssFeed(domain = 'http://localhost:3000') {
 <rss version="2.0">
   <channel>
     <title><![CDATA[${settings.siteName}]]></title>
-    <link>${domain}</link>
+    <link>${cleanDomain}</link>
     <description><![CDATA[${settings.siteTagline}]]></description>
     <language>en-us</language>
     ${items}
