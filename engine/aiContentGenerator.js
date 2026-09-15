@@ -21,7 +21,7 @@ async function generateArticleForProduct(product, articleType = 'Product Review'
 
   if (articleType === 'Product Review') {
     title = `${product.name} Review (${year}): Is It Worth Your Money?`;
-    content = `# ${product.name} Review (${year}): Honest In-Depth Analysis
+    content = `## ${product.name} Review (${year}): Honest In-Depth Analysis
 
 ${ftcDisclaimer}
 
@@ -94,7 +94,7 @@ If you want a proven solution that excels in **${product.category}**, **${produc
 `;
   } else if (articleType === 'Buyer Guide') {
     title = `Top 5 Best ${product.niche} Solutions in ${year} (Tested & Ranked)`;
-    content = `# Top 5 Best ${product.niche} Solutions in ${year} (Tested & Ranked)
+    content = `## Top 5 Best ${product.niche} Solutions in ${year} (Tested & Ranked)
 
 ${ftcDisclaimer}
 
