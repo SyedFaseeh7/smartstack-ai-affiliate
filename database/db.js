@@ -3,35 +3,35 @@ const path = require('path');
 
 const DB_FILE = path.join(__dirname, 'data.json');
 
-// 100% Amazon Products & Amazon Bounty Programs with tag=smartstack-20
-const amazonProducts = [
+// Clean initial dataset reset to 0 clicks/earnings, with clean consumer branding
+const defaultProducts = [
   {
     id: 'prod-bounty-1',
     name: 'Amazon Prime for Young Adults (6-Month Trial)',
-    niche: 'Bounties & Membership Deals',
-    category: 'Amazon Bounty Program',
+    niche: 'Exclusive Deals & Membership',
+    category: 'Verified Member Deal',
     rating: 5.0,
     price: 'FREE 6-Month Trial',
     originalPrice: '$14.99/mo value',
-    discount: '$30 Signup Bonus Value',
-    affiliateNetwork: 'Amazon Bounty Program',
+    discount: '6 Months FREE Access',
+    affiliateNetwork: 'Verified Partner',
     affiliateUrl: 'https://www.amazon.com/joinyoungadult?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop&q=80',
     pros: ['Free 6-Month trial for students & young adults (18-24)', 'Free 1-Day & Same-Day delivery', 'Includes Prime Video, Prime Music, & Grubhub+'],
     cons: ['Requires verification of age (18-24) or student status'],
-    description: 'Get 6 months of Amazon Prime for FREE including free fast shipping, Prime Video streaming, and exclusive college deals.',
+    description: 'Get 6 months of Amazon Prime for FREE including free fast shipping, Prime Video streaming, and exclusive deals.',
     keyFeatures: ['6 Months FREE Prime', 'Free 1-Day Shipping', 'Prime Video & Music Included', 'Grubhub+ Free Food Delivery']
   },
   {
     id: 'prod-bounty-2',
     name: 'Audible Premium Plus 30-Day Free Trial',
-    niche: 'Bounties & Membership Deals',
-    category: 'Amazon Bounty Program',
+    niche: 'Exclusive Deals & Membership',
+    category: 'Verified Member Deal',
     rating: 4.9,
     price: 'FREE 30-Day Trial',
     originalPrice: '$14.95/mo',
     discount: '2 FREE Audiobooks',
-    affiliateNetwork: 'Amazon Bounty Program',
+    affiliateNetwork: 'Verified Partner',
     affiliateUrl: 'https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
     pros: ['Includes 1 free credit for any premium audiobook', 'Unlimited listening to Audible Plus catalog', 'Keep your audiobooks forever'],
@@ -48,7 +48,7 @@ const amazonProducts = [
     price: '$49.99',
     originalPrice: '$59.99',
     discount: '17% OFF',
-    affiliateNetwork: 'Amazon Associates',
+    affiliateNetwork: 'Amazon Verified',
     affiliateUrl: 'https://www.amazon.com/dp/B09B8V1LZ3?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&auto=format&fit=crop&q=80',
     pros: ['Vibrant sound quality with deeper bass', 'Built-in Alexa voice assistant', 'Eero built-in WiFi extender support'],
@@ -65,7 +65,7 @@ const amazonProducts = [
     price: '$59.99',
     originalPrice: '$69.99',
     discount: '14% OFF',
-    affiliateNetwork: 'Amazon Associates',
+    affiliateNetwork: 'Amazon Verified',
     affiliateUrl: 'https://www.amazon.com/dp/B0BP9SNVH9?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&auto=format&fit=crop&q=80',
     pros: ['Ultra HD 4K streaming with Dolby Vision', 'WiFi 6E high-speed streaming', '16GB storage for games & apps'],
@@ -82,7 +82,7 @@ const amazonProducts = [
     price: '$149.99',
     originalPrice: '$169.99',
     discount: '12% OFF',
-    affiliateNetwork: 'Amazon Associates',
+    affiliateNetwork: 'Amazon Verified',
     affiliateUrl: 'https://www.amazon.com/dp/B09TMN58Y2?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
     pros: ['6.8" 300 ppi glare-free display reads like real paper', 'Adjustable warm light for night reading', 'Up to 10 weeks battery life'],
@@ -99,7 +99,7 @@ const amazonProducts = [
     price: '$199.99',
     originalPrice: '$249.00',
     discount: '20% OFF',
-    affiliateNetwork: 'Amazon Associates',
+    affiliateNetwork: 'Amazon Verified',
     affiliateUrl: 'https://www.amazon.com/dp/B0CHWRXH8B?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=600&auto=format&fit=crop&q=80',
     pros: ['Up to 2x more Active Noise Cancellation', 'Adaptive Audio & Transparency Mode', 'USB-C charging case with Precision Finding'],
@@ -116,7 +116,7 @@ const amazonProducts = [
     price: '$89.99',
     originalPrice: '$119.99',
     discount: '25% OFF',
-    affiliateNetwork: 'Amazon Associates',
+    affiliateNetwork: 'Amazon Verified',
     affiliateUrl: 'https://www.amazon.com/dp/B0B1N4NBDH?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80',
     pros: ['Two-year battery life on 2 AA lithium batteries', '1080p HD live view & infrared night vision', 'Enhanced motion detection'],
@@ -133,7 +133,7 @@ const amazonProducts = [
     price: '$44.99',
     originalPrice: '$59.99',
     discount: '25% OFF',
-    affiliateNetwork: 'Amazon Associates',
+    affiliateNetwork: 'Amazon Verified',
     affiliateUrl: 'https://www.amazon.com/dp/B099F558MC?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1609592424083-d5d34208d132?w=600&auto=format&fit=crop&q=80',
     pros: ['Snap-and-go MagSafe wireless charging', 'Foldable built-in phone kickstand', '10,000mAh high capacity'],
@@ -150,7 +150,7 @@ const amazonProducts = [
     price: '$348.00',
     originalPrice: '$399.99',
     discount: '13% OFF',
-    affiliateNetwork: 'Amazon Associates',
+    affiliateNetwork: 'Amazon Verified',
     affiliateUrl: 'https://www.amazon.com/dp/B09XS7JWHH?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80',
     pros: ['Industry-leading noise canceling with 8 microphones', 'Ultra-comfortable lightweight design', '30-hour battery life with quick charging'],
@@ -167,7 +167,7 @@ const amazonProducts = [
     price: '$99.99',
     originalPrice: '$109.99',
     discount: '9% OFF',
-    affiliateNetwork: 'Amazon Associates',
+    affiliateNetwork: 'Amazon Verified',
     affiliateUrl: 'https://www.amazon.com/dp/B09HM94VDS?tag=smartstack-20',
     imageUrl: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80',
     pros: ['8K DPI track-anywhere optical sensor', 'Quiet click switches reduce noise by 90%', 'MagSpeed electromagnetic scroll wheel'],
@@ -180,16 +180,14 @@ const amazonProducts = [
 const defaultArticles = [
   {
     id: 'art-bounty-1',
-    title: 'How to Get Amazon Prime FREE for 6 Months (Prime for Young Adults Deal)',
+    title: 'How to Get Amazon Prime FREE for 6 Months (Exclusive Member Guide)',
     slug: 'get-free-amazon-prime-6-month-trial-young-adults',
-    niche: 'Bounties & Membership Deals',
-    category: 'Amazon Bounty Deal',
-    affiliateNetwork: 'Amazon Bounty Program',
+    niche: 'Exclusive Deals & Membership',
+    category: 'Member Offer',
+    affiliateNetwork: 'Amazon Verified',
     productId: 'prod-bounty-1',
     snippet: 'Discover how students and young adults ages 18-24 can claim 6 months of FREE Amazon Prime, Prime Video, and Grubhub+ food delivery.',
-    content: `# How to Get Amazon Prime FREE for 6 Months (Prime for Young Adults Deal)
-
-*FTC Disclosure: As an Amazon Associate, we earn from qualifying purchases and trial registrations.*
+    content: `# How to Get Amazon Prime FREE for 6 Months (Exclusive Member Guide)
 
 Are you a college student or young adult aged 18 to 24? Amazon offers an official **6-Month FREE Trial of Prime for Young Adults** (valued at over $90).
 
@@ -211,15 +209,15 @@ Unlike standard 30-day trials, **Prime for Young Adults** grants you half a year
 ## How to Claim Your 6-Month Free Trial
 
 <div class="cta-box">
-  <h3>🔥 Official Amazon Bounty Deal: 6 Months FREE</h3>
+  <h3>🔥 Official Exclusive Offer: 6 Months FREE</h3>
   <p>Click below to verify your age (18-24) or student status and claim your free trial instantly.</p>
   <a href="https://www.amazon.com/joinyoungadult?tag=smartstack-20" target="_blank" rel="nofollow sponsored" class="btn btn-primary btn-lg">👉 Claim 6-Month FREE Prime Trial Now</a>
 </div>
 `,
     status: 'published',
     publishedAt: '2026-09-14T12:00:00.000Z',
-    views: 680,
-    clicks: 94
+    views: 0,
+    clicks: 0
   },
   {
     id: 'art-amz-1',
@@ -227,12 +225,10 @@ Unlike standard 30-day trials, **Prime for Young Adults** grants you half a year
     slug: 'amazon-echo-dot-5th-gen-smart-speaker-review',
     niche: 'Amazon Devices & Smarthome',
     category: 'Product Review',
-    affiliateNetwork: 'Amazon Associates',
+    affiliateNetwork: 'Amazon Verified',
     productId: 'prod-amz-1',
     snippet: 'We tested the Echo Dot 5th Gen for 90 days. Here is our breakdown of sound quality, Alexa smart home integration, and mesh WiFi capabilities.',
     content: `# Amazon Echo Dot (5th Gen) Review (2026): Is It the Best Smart Speaker?
-
-*FTC Disclosure: As an Amazon Associate, we earn from qualifying purchases.*
 
 The **Amazon Echo Dot (5th Generation)** remains the undisputed king of entry-level smart speakers.
 
@@ -245,23 +241,21 @@ The 5th Gen model features an updated audio driver that delivers **2x deeper bas
 `,
     status: 'published',
     publishedAt: '2026-09-14T10:30:00.000Z',
-    views: 410,
-    clicks: 52
+    views: 0,
+    clicks: 0
   },
   {
     id: 'art-amz-2',
-    title: 'Apple AirPods Pro (2nd Gen) Review: Best Noise Canceling Earbuds on Amazon',
-    slug: 'apple-airpods-pro-2nd-gen-usb-c-review',
+    title: 'Best Earphones 2026: Apple AirPods Pro (2nd Gen) In-Depth Review',
+    slug: 'best-earphones-2026-apple-airpods-pro-2nd-gen-review',
     niche: 'Consumer Tech & Audio',
     category: 'Product Review',
-    affiliateNetwork: 'Amazon Associates',
+    affiliateNetwork: 'Amazon Verified',
     productId: 'prod-amz-4',
     snippet: 'Read our hands-on review of the AirPods Pro 2 with USB-C case, evaluating active noise cancellation, adaptive transparency, and battery life.',
-    content: `# Apple AirPods Pro (2nd Gen) Review: Best Noise Canceling Earbuds on Amazon
+    content: `# Best Earphones 2026: Apple AirPods Pro (2nd Gen) In-Depth Review
 
-*FTC Disclosure: As an Amazon Associate, we earn from qualifying purchases.*
-
-If you want world-class noise cancellation in a pocketable design, the **Apple AirPods Pro (2nd Gen)** is the gold standard.
+If you want world-class noise cancellation in a pocketable design, the **Apple AirPods Pro (2nd Gen)** is the gold standard for wireless earphones in 2026.
 
 ![AirPods Pro](https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=800&auto=format&fit=crop&q=80)
 
@@ -269,11 +263,12 @@ If you want world-class noise cancellation in a pocketable design, the **Apple A
 `,
     status: 'published',
     publishedAt: '2026-09-13T14:00:00.000Z',
-    views: 530,
-    clicks: 68
+    views: 0,
+    clicks: 0
   }
 ];
 
+// Clean initial data reset to 0 clicks & earnings
 const defaultData = {
   settings: {
     amazonTag: 'smartstack-20',
@@ -284,25 +279,22 @@ const defaultData = {
     geminiApiKey: '',
     autonomousMode: true,
     postingIntervalHours: 12,
-    activeNiches: ['Amazon Devices & Smarthome', 'Consumer Tech & Audio', 'Bounties & Membership Deals'],
+    activeNiches: ['Amazon Devices & Smarthome', 'Consumer Tech & Audio', 'Exclusive Deals & Membership'],
     siteName: 'SmartStack AI Product Reviews & Amazon Deals',
-    siteTagline: 'Unbiased Data-Driven Amazon Product Reviews & Bounty Deals'
+    siteTagline: 'Unbiased Data-Driven Amazon Product Reviews & Deals'
   },
-  products: amazonProducts,
+  products: defaultProducts,
   articles: defaultArticles,
-  clicks: [
-    { id: 'clk-101', articleId: 'art-bounty-1', productId: 'prod-bounty-1', network: 'Amazon Bounty Program', timestamp: '2026-09-14T09:12:00.000Z', subId: 'bounty_trial_cta' },
-    { id: 'clk-102', articleId: 'art-amz-1', productId: 'prod-amz-1', network: 'Amazon Associates', timestamp: '2026-09-14T10:15:00.000Z', subId: 'amazon_cta_btn' }
-  ],
+  clicks: [],
   campaigns: [
     {
       id: 'camp-1',
-      name: 'Amazon Bounties & Prime Deals',
-      niche: 'Bounties & Membership Deals',
-      targetKeywords: ['free prime trial', 'audible 30 day free', 'young adult prime deal'],
+      name: 'Amazon Prime & Audio Tech Deals',
+      niche: 'Consumer Tech & Audio',
+      targetKeywords: ['best earphones 2026', 'airpods pro review', 'free prime trial'],
       status: 'active',
-      articlesGenerated: 6,
-      lastRun: '2026-09-14T10:00:00.000Z'
+      articlesGenerated: 3,
+      lastRun: '2026-09-15T10:00:00.000Z'
     }
   ]
 };
@@ -312,7 +304,7 @@ function initDb() {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
-  // Write fresh dataset containing verified Amazon products & Bounties
+  // Reset database to 0 initial metrics and clean consumer content
   fs.writeFileSync(DB_FILE, JSON.stringify(defaultData, null, 2), 'utf8');
 }
 
